@@ -1,0 +1,13 @@
+.NavBar {
+  background-color: #289944;
+  border-bottom: 1px solid #144d22;
+}
+
+.Active i {
+  color: #1f2421;
+}
+
+.Active {
+  text-decoration: underline;
+  color: #1f2421;
+}
