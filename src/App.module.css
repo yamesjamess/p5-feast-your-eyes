@@ -1,6 +1,6 @@
 .App {
   font-family: "Quicksand", sans-serif;
-  background-color: #fff;
+  background-color: #e8e8e9;
   min-height: 100vh;
 }
 
@@ -9,10 +9,10 @@
 }
 
 .Content {
-  background-color: #ABC798;
+  background-color: #abc798;
   padding: 10px;
   border-radius: 2px;
-  border: 1px solid #dadadf;
+  border: 1px solid #e8e8e9;
 }
 
 .FillerImage {
@@ -73,7 +73,7 @@ figure {
   width: 5px;
 }
 *::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #E8E8E9;
 }
 *::-webkit-scrollbar-thumb {
   background: #888;
