@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import { Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
 import "./api/axiosDefaults";
 import RegisterForm from "./pages/auth/RegisterForm";
+import SignInForm from "./pages/auth/SignInForm";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <Container className={styles.Main}>
         <Switch>
           <Route exact path="/" render={() => <h1>Home page</h1>} />
-          <Route exact path="/signin" render={() => <h1>Sign in</h1>} />
+          <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/register" render={() => <RegisterForm />} />
           <Route render={() => <h1>Error 404 - Page not found!</h1>} />
         </Switch>
