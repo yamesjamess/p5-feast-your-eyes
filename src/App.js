@@ -2,6 +2,8 @@ import { Container } from "react-bootstrap";
 import styles from "./App.module.css";
 import NavBar from "./components/NavBar";
 import { Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
+import "./api/axiosDefaults";
+import RegisterForm from "./pages/auth/RegisterForm";
 
 function App() {
   return (
@@ -11,7 +13,7 @@ function App() {
         <Switch>
           <Route exact path="/" render={() => <h1>Home page</h1>} />
           <Route exact path="/signin" render={() => <h1>Sign in</h1>} />
-          <Route exact path="/signup" render={() => <h1>Sign up</h1>} />
+          <Route exact path="/register" render={() => <RegisterForm />} />
           <Route render={() => <h1>Error 404 - Page not found!</h1>} />
         </Switch>
       </Container>
