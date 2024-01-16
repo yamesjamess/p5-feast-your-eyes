@@ -15,7 +15,7 @@
 }
 
 .Dark {
-  background-color: #56644c;
+  background-color: #44503d;
   color: #e8e8e9;
 }
 
@@ -42,27 +42,27 @@
   box-shadow: 0 0 0 0.2rem rgba(86, 100, 76, 0.5) important;
 }
 
-.Blue,
-.BlueOutline:hover,
-.Bright:hover {
-  background-color: #2142b2;
-  color: #ffffff;
+.Green,
+.GreenOutline:hover,
+.Dark:hover {
+  background-color: #44503d;
+  color: #e8e8e9;
 }
 
-.BlueOutline,
-.Blue:hover {
-  /* border: 1px solid #2142b2; */
-  background-color: #ffffff;
-  color: #2142b2;
+/* .GreenOutline,
+.Green:hover {
+  border: 1px solid #2142b2;
+  background-color: #e8e8e9;
+  color: #44503d;
 }
 
 .Black,
 .BlackOutline:hover {
-  /* background-color: #242a3d;
-      color: white; */
+  background-color: #242a3d;
+      color: white;
   background-color: #242a3d;
   color: aliceblue;
-}
+} */
 
 .Black:hover,
 .BlackOutline {
