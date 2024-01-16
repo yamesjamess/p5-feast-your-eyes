@@ -97,6 +97,10 @@ const Post = (props) => {
           )}
           {recommends_count}
 
+          <Link to={`/posts/${id}`}>
+            <i className="far fa-comments" />
+          </Link>
+          {comments_count}
         </div>
       </Card.Body>
     </Card>
