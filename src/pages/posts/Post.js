@@ -72,6 +72,31 @@ const Post = (props) => {
           )}
           {likes_count}
 
+          {is_owner ? (
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>You can't recommend your own post!</Tooltip>}
+            >
+              <i className="fa-regular fa-star" />
+            </OverlayTrigger>
+          ) : recommend_id ? (
+            <span onClick={() => {}}>
+              <i className={`fa-solid fa-star ${styles.Star}`} />
+            </span>
+          ) : currentUser ? (
+            <span onClick={() => {}}>
+              <i className={`fa-regular fa-star ${styles.StarOutline}`} />
+            </span>
+          ) : (
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>Log in to like posts!</Tooltip>}
+            >
+              <i className="fa-regular fa-star" />
+            </OverlayTrigger>
+          )}
+          {recommends_count}
+
         </div>
       </Card.Body>
     </Card>
