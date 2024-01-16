@@ -6,6 +6,7 @@ import "./api/axiosDefaults";
 import RegisterForm from "./pages/auth/RegisterForm";
 import SignInForm from "./pages/auth/SignInForm";
 import PostCreateForm from "./pages/posts/PostCreateForm";
+import PostDetailPage from "./pages/posts/PostDetailPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/register" render={() => <RegisterForm />} />
           <Route exact path="/posts/create" render={() => <PostCreateForm />} />
+          <Route exact path="/posts/:id" render={() => <PostDetailPage />} />
           <Route render={() => <h1>Error 404 - Page not found!</h1>} />
         </Switch>
       </Container>
