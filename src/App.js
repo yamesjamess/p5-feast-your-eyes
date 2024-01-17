@@ -22,7 +22,37 @@ function App() {
           <Route
             exact
             path="/"
-            render={() => <PostsListPage message="sorry! no results found!" />}
+            render={() => <PostsListPage message="Sorry! No results found!" />}
+          />
+          <Route
+            exact
+            path="/feed"
+            render={() => (
+              <PostsListPage
+                message="No results found. Change your query or follow a user."
+                filter={`owner__followed__owner__profile=${profile_id}&`}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/liked"
+            render={() => (
+              <PostsListPage
+                message="No results found. Change your query or like a post."
+                filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
+              />
+            )}
+          />
+                    <Route
+            exact
+            path="/recommended"
+            render={() => (
+              <PostsListPage
+                message="No results found. Change your query or recommend a post."
+                filter={`recommends__owner__profile=${profile_id}&ordering=-recommends__created_at&`}
+              />
+            )}
           />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/register" render={() => <RegisterForm />} />
