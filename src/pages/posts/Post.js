@@ -116,7 +116,7 @@ const Post = (props) => {
           {is_owner ? (
             <OverlayTrigger
               placement="top"
-              overlay={<Tooltip>You can't like your own post!</Tooltip>}
+              overlay={<Tooltip>you can't like your own post!</Tooltip>}
             >
               <i className="far fa-heart" />
             </OverlayTrigger>
@@ -131,7 +131,7 @@ const Post = (props) => {
           ) : (
             <OverlayTrigger
               placement="top"
-              overlay={<Tooltip>Log in to like posts!</Tooltip>}
+              overlay={<Tooltip>log in to like this post!</Tooltip>}
             >
               <i className="far fa-heart" />
             </OverlayTrigger>
@@ -141,7 +141,7 @@ const Post = (props) => {
           {is_owner ? (
             <OverlayTrigger
               placement="top"
-              overlay={<Tooltip>You can't recommend your own post!</Tooltip>}
+              overlay={<Tooltip>you can't recommend your own post!</Tooltip>}
             >
               <i className="fa-regular fa-star" />
             </OverlayTrigger>
@@ -156,7 +156,7 @@ const Post = (props) => {
           ) : (
             <OverlayTrigger
               placement="top"
-              overlay={<Tooltip>Log in to like posts!</Tooltip>}
+              overlay={<Tooltip>log in to recommend this post!</Tooltip>}
             >
               <i className="fa-regular fa-star" />
             </OverlayTrigger>
