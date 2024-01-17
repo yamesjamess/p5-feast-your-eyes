@@ -97,18 +97,18 @@ function PostCreateForm() {
         </Alert>
       ))}
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Light} `}
-        type="submit"
-      >
-        create
-      </Button>
-      <Button
         className={`${btnStyles.Button} ${btnStyles.Dark}`}
         onClick={() => {
           history.goBack();
         }}
       >
         cancel
+      </Button>
+      <Button
+        className={`${btnStyles.Button} ${btnStyles.Light} `}
+        type="submit"
+      >
+        create
       </Button>
     </div>
   );
@@ -128,7 +128,7 @@ function PostCreateForm() {
                   </figure>
                   <div>
                     <Form.Label
-                      className={`${btnStyles.Button} ${btnStyles.Green} btn`}
+                      className={`${btnStyles.Button} ${btnStyles.Light} btn`}
                       htmlFor="image-upload"
                     >
                       change the image
