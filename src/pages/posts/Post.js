@@ -2,9 +2,10 @@ import React from "react";
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
+import { DropDownOptions } from "../../components/DropDownOptions";
 
 const Post = (props) => {
   const {
@@ -27,6 +28,20 @@ const Post = (props) => {
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+  const history = useHistory();
+
+  const handleEdit = () => {
+    history.push(`/post/${id}/edit`);
+  };
+
+  const handleDelete = async () => {
+    try {
+      await axiosRes.delete(`/posts/${id}/`);
+      history.goBack();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const handleLike = async () => {
     try {
@@ -67,7 +82,11 @@ const Post = (props) => {
         ...prevPosts,
         results: prevPosts.results.map((post) => {
           return post.id === id
-            ? { ...post, recommends_count: post.recommends_count + 1, recommend_id: data.id }
+            ? {
+                ...post,
+                recommends_count: post.recommends_count + 1,
+                recommend_id: data.id,
+              }
             : post;
         }),
       }));
@@ -83,7 +102,11 @@ const Post = (props) => {
         ...prevPosts,
         results: prevPosts.results.map((post) => {
           return post.id === id
-            ? { ...post, recommends_count: post.recommends_count - 1, recommend_id: null }
+            ? {
+                ...post,
+                recommends_count: post.recommends_count - 1,
+                recommend_id: null,
+              }
             : post;
         }),
       }));
@@ -102,7 +125,12 @@ const Post = (props) => {
           </Link>
           <div className="d-flex align-items-center">
             <span>{updated_at}</span>
-            {is_owner && postPage && "..."}
+            {is_owner && postPage && (
+              <DropDownOptions
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
+              />
+            )}
           </div>
         </Media>
       </Card.Body>
