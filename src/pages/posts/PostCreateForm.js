@@ -142,7 +142,7 @@ function PostCreateForm() {
                 >
                   <Asset
                     src={Upload}
-                    message="Click to upload your scrumption image"
+                    message="click here to upload your scrumptious image"
                   />
                 </Form.Label>
               )}
