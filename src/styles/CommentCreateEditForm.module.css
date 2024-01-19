@@ -5,16 +5,32 @@
 
 .Button {
   border: none;
-  background-color: #242a3d;
-  color: aliceblue;
   border-radius: 100px;
   padding: 4px 10px;
   min-width: 75px;
   margin: 5px;
 }
 
-.Button:hover {
+.Light {
+  background-color: #dde9d6;
+  color: #1f2421;
+}
+
+.Dark {
+  background-color: #44503d;
+  color: #e8e8e9;
+}
+
+.Dark:hover {
   cursor: pointer;
-  background-color: aliceblue;
-  color: #242a3d;
+  background-color: #e8e8e9;
+  transition: color ease-in-out 0.3s;
+  color: #44503d;
+}
+
+.Light:hover {
+  cursor: pointer;
+  background-color: #44503d;
+  transition: color ease-in-out 0.3s;
+  color: #e8e8e9;
 }
