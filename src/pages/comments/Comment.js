@@ -23,27 +23,33 @@ const Comment = (props) => {
   const is_owner = currentUser?.username === owner;
 
   const handleDelete = async () => {
-    try {
-      await axiosRes.delete(`/comments/${id}/`);
-      setPost((prevPost) => ({
-        results: [
-          {
-            ...prevPost.results[0],
-            comments_count: prevPost.results[0].comments_count - 1,
-          },
-        ],
-      }));
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this post?"
+    );
+    if (confirmDelete) {
+      try {
+        await axiosRes.delete(`/comments/${id}/`);
+        setPost((prevPost) => ({
+          results: [
+            {
+              ...prevPost.results[0],
+              comments_count: prevPost.results[0].comments_count - 1,
+            },
+          ],
+        }));
 
-      setComments((prevComments) => ({
-        ...prevComments,
-        results: prevComments.results.filter((comment) => comment.id !== id),
-      }));
-    } catch (err) {}
+        setComments((prevComments) => ({
+          ...prevComments,
+          results: prevComments.results.filter((comment) => comment.id !== id),
+        }));
+      } catch (err) {
+        console.log(err);
+      }
+    }
   };
 
   return (
     <div>
-      <hr />
       <Media>
         <Link to={`/profiles/${profile_id}`}>
           <Avatar src={profile_image} />
@@ -57,6 +63,7 @@ const Comment = (props) => {
           <DropDownOptions handleEdit={() => {}} handleDelete={handleDelete} />
         )}
       </Media>
+      <hr />
     </div>
   );
 };
