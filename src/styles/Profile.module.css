@@ -1,3 +1,7 @@
 .WordBreak {
   word-break: break-all;
 }
+
+.Dark {
+    color: #44503d;
+}

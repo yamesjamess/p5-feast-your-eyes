@@ -46,27 +46,3 @@
   border-color: #1f2421 !important;
   box-shadow: 0 0 0 0.2rem rgba(86, 100, 76, 0.5) important;
 }
-
-/* .GreenOutline,
-.Green:hover {
-  border: 1px solid #2142b2;
-  background-color: #e8e8e9;
-  color: #44503d;
-}
-
-.Black,
-.BlackOutline:hover {
-  background-color: #242a3d;
-      color: white;
-  background-color: #242a3d;
-  color: aliceblue;
-} */
-
-.Black:hover,
-.BlackOutline {
-  /* background-color: #dadadf;
-      color: #242a3d;
-      border-color: #242a3d; */
-  background-color: aliceblue;
-  color: #242a3d;
-}
