@@ -14,7 +14,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
-const UserPasswordForm = () => {
+const UserChangePasswordForm = () => {
   const history = useHistory();
   const { id } = useParams();
   const currentUser = useCurrentUser();
@@ -105,4 +105,4 @@ const UserPasswordForm = () => {
   );
 };
 
-export default UserPasswordForm;
+export default UserChangePasswordForm;
