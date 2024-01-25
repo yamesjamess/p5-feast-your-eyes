@@ -71,7 +71,7 @@ const TopRecommend = ({ message }) => {
                 </Row>
               </div>
             ) : (
-                <Asset src={NoResults} message={message} alt={message}/>
+                <Asset src={NoResults} message={message}/>
             )}
           </>
         ) : (
