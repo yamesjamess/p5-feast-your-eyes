@@ -18,7 +18,7 @@ import PopularProfiles from "../profiles/PopularProfiles";
 import TopRecommend from "../recommends/TopRecommend";
 import Tags from "../tags/Tags";
 
-function PostsPage({ message, filter = "" }) {
+function PostsListPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
@@ -95,4 +95,4 @@ function PostsPage({ message, filter = "" }) {
   );
 }
 
-export default PostsPage;
+export default PostsListPage;
