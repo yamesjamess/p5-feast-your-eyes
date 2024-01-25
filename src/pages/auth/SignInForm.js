@@ -16,9 +16,11 @@ import appStyles from "../../App.module.css";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
+import { useRedirect } from "../../hooks/useRedirect";
 
 function SignInForm() {
   const setCurrentUser = useSetCurrentUser();
+  useRedirect("loggedIn");
   const [signInData, setSignInData] = useState({
     username: "",
     password: "",
@@ -42,7 +44,7 @@ function SignInForm() {
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
       setCurrentUser(data.user);
-      history.push("/");
+      history.goBack();
     } catch (err) {
       setErrors(err.response?.data);
     }
@@ -52,7 +54,9 @@ function SignInForm() {
     <Row className={styles.Row}>
       <Col className="my-auto p-0 p-md-2" md={6}>
         <Container className={`${appStyles.Content} p-4 `}>
-          <h1 className={styles.Header}>sign in to <span className={styles.Dark}>feast your eyes</span>!</h1>
+          <h1 className={styles.Header}>
+            sign in to <span className={styles.Dark}>feast your eyes</span>!
+          </h1>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="username">
               <Form.Label className="d-none">username</Form.Label>

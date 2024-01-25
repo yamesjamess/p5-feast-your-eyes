@@ -15,8 +15,10 @@ import btnStyles from "../../styles/Button.module.css";
 import { Alert, Image } from "react-bootstrap";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
+import { useRedirect } from "../../hooks/useRedirect";
 
 function PostCreateForm() {
+  useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
 
   const [postData, setPostData] = useState({
@@ -68,7 +70,7 @@ function PostCreateForm() {
   const textFields = (
     <div className="text-center">
       <Form.Group>
-        <Form.Label>restaurant name + menu</Form.Label>
+        <Form.Label>menu</Form.Label>
         <Form.Control
           type="text"
           name="title"

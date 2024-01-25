@@ -16,8 +16,10 @@ import {
 } from "react-bootstrap";
 
 import axios from "axios";
+import { useRedirect } from "../../hooks/useRedirect";
 
 const RegisterForm = () => {
+  useRedirect("loggedIn");
   const [registerData, setRegisterData] = useState({
     username: "",
     password1: "",
@@ -56,7 +58,9 @@ const RegisterForm = () => {
       </Col>
       <Col className="my-auto py-2 p-md-2" md={6}>
         <Container className={`${appStyles.Content} p-4 `}>
-          <h1 className={styles.Header}>ready to <span className={styles.Dark}>feast your eyes</span>?</h1>
+          <h1 className={styles.Header}>
+            ready to <span className={styles.Dark}>feast your eyes</span>?
+          </h1>
           <h1 className={styles.Header}>create an account</h1>
 
           <Form onSubmit={handleSubmit}>
