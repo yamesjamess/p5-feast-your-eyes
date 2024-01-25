@@ -7,7 +7,12 @@
 }
 
 .PostHeader {
-    background-color: #abc798;
+  background-color: #abc798;
+}
+
+.Owner {
+  color: #44503d;
+  font-weight: bold;
 }
 
 .Post figure,
@@ -19,22 +24,14 @@ h5 {
   color: #44503d;
 }
 
-/* .Heart:hover {
-  color: #2142b2;
-} */
-
 .HeartOutline:hover {
   color: #44503d;
 }
 
 .Star {
-  color: #FFD449;
+  color: #ffd449;
 }
 
-/* .Star:hover {
-  color: #2142b2;
-} */
-
 .StarOutline:hover {
-  color: #FFD449;
+  color: #ffd449;
 }
