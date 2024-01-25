@@ -1,3 +1,10 @@
 .Container {
   min-height: 343px;
 }
+
+.SmallLabel {
+  font-size: .7em;
+  color: #44503d;
+  text-decoration: underline;
+
+}
