@@ -148,7 +148,7 @@ const Post = (props) => {
         {restaurant && <Card.Title>restaunt: {restaurant}</Card.Title>}
         {title && <Card.Title className="text-center">menu: {title}</Card.Title>}
         {content && <Card.Text>{content}</Card.Text>}
-        {tag && <Card.Text><i className={`fa-solid fa-tag ${styles.Tag}`} />{tag}</Card.Text>}
+        {tag && <Card.Text>tag:<i className={`fa-solid fa-tag ${styles.Tag}`} />{tag}</Card.Text>}
         <div className={styles.PostBar}>
           {is_owner ? (
             <OverlayTrigger
