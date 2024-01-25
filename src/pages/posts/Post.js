@@ -24,6 +24,8 @@ const Post = (props) => {
     updated_at,
     postPage,
     setPosts,
+    restaurant,
+    tag,
   } = props;
 
   const currentUser = useCurrentUser();
@@ -143,8 +145,10 @@ const Post = (props) => {
         <Card.Img src={image} alt={title} />
       </Link>
       <Card.Body>
-        {title && <Card.Title className="text-center">{title}</Card.Title>}
+        {restaurant && <Card.Title>restaunt: {restaurant}</Card.Title>}
+        {title && <Card.Title className="text-center">menu: {title}</Card.Title>}
         {content && <Card.Text>{content}</Card.Text>}
+        {tag && <Card.Text><i className={`fa-solid fa-tag ${styles.Tag}`} />{tag}</Card.Text>}
         <div className={styles.PostBar}>
           {is_owner ? (
             <OverlayTrigger

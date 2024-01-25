@@ -23,8 +23,10 @@ function PostEditForm() {
     title: "",
     content: "",
     image: "",
+    restaurant: "",
+    tag: "",
   });
-  const { title, content, image } = postData;
+  const { title, content, image, restaurant, tag } = postData;
 
   const imageInput = useRef(null);
   const history = useHistory();
@@ -34,9 +36,9 @@ function PostEditForm() {
     const handleMount = async () => {
       try {
         const { data } = await axiosReq.get(`/posts/${id}/`);
-        const { title, content, image, is_owner } = data;
+        const { title, content, image, is_owner, restaurant, tag } = data;
 
-        is_owner ? setPostData({ title, content, image }) : history.push("/");
+        is_owner ? setPostData({ title, content, image, restaurant, tag }) : history.push("/");
       } catch (error) {
         console.log(error);
       }
@@ -67,6 +69,8 @@ function PostEditForm() {
 
     formData.append("title", title);
     formData.append("content", content);
+    formData.append("restaurant", restaurant);
+    formData.append("tag", tag);
     if (imageInput?.current?.files[0]) {
       formData.append("image", imageInput.current.files[0]);
     }
@@ -84,6 +88,20 @@ function PostEditForm() {
 
   const textFields = (
     <div className="text-center">
+      <Form.Group>
+        <Form.Label>restaurant</Form.Label>
+        <Form.Control
+          type="text"
+          name="restaurant"
+          value={restaurant}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      {errors?.restaurant?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <Form.Group>
         <Form.Label>title</Form.Label>
         <Form.Control
@@ -114,7 +132,20 @@ function PostEditForm() {
           {message}
         </Alert>
       ))}
-
+      <Form.Group>
+        <Form.Label>tag</Form.Label>
+        <Form.Control
+          type="text"
+          name="tag"
+          value={tag}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      {errors?.tag?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <Button
         className={`${btnStyles.Button} ${btnStyles.Dark}`}
         onClick={() => history.goBack()}

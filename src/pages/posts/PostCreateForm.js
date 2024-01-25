@@ -25,8 +25,10 @@ function PostCreateForm() {
     title: "",
     content: "",
     image: "",
+    restaurant: "",
+    tag: "",
   });
-  const { title, content, image } = postData;
+  const { title, content, image, restaurant, tag } = postData;
 
   const imageInput = useRef(null);
   const history = useHistory();
@@ -55,10 +57,13 @@ function PostCreateForm() {
     formData.append("title", title);
     formData.append("content", content);
     formData.append("image", imageInput.current.files[0]);
+    formData.append("restaurant", restaurant);
+    formData.append("tag", tag);
 
     try {
       const { data } = await axiosReq.post("/posts/", formData);
       history.push(`/posts/${data.id}`);
+      console.log(data);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -70,7 +75,21 @@ function PostCreateForm() {
   const textFields = (
     <div className="text-center">
       <Form.Group>
-        <Form.Label>menu</Form.Label>
+        <Form.Label>restaurant</Form.Label>
+        <Form.Control
+          type="text"
+          name="restaurant"
+          value={restaurant}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      {errors?.restaurant?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      <Form.Group>
+        <Form.Label>title</Form.Label>
         <Form.Control
           type="text"
           name="title"
@@ -94,6 +113,20 @@ function PostCreateForm() {
         />
       </Form.Group>
       {errors?.content?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      <Form.Group>
+        <Form.Label>tag</Form.Label>
+        <Form.Control
+          type="text"
+          name="tag"
+          value={tag}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      {errors?.tag?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
