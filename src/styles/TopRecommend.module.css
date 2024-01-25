@@ -1,0 +1,80 @@
+.TopRecommendPosts {
+  background-color: #ffffff;
+  border: 1px solid #56644c;
+  border-radius: 2px;
+  margin-bottom: 16px;
+}
+
+.Header {
+  background-color: #abc798;
+  font-weight: bold;
+  text-decoration: underline !important;
+}
+
+.HorizontalScrollContainer {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.HorizontalScrollRow {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.PostContainer {
+  text-align: center;
+  outline: 1px solid #56644c;
+  margin: 20px 0px 20px 30px;
+  padding: 5px;
+}
+
+.PostDetails {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+.PostDetails p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 0; /* Optional: Remove margin if needed */
+}
+
+.RecommendCount {
+  font-weight: bold;
+}
+
+.PostImage {
+  height: 200px;
+  object-fit: contain;
+}
+
+
+.HorizontalScrollContainer::-webkit-scrollbar {
+  height: 10px;
+}
+
+.HorizontalScrollContainer::-webkit-scrollbar-thumb {
+  background-color: #44503d;
+  border-radius: 5px;
+}
+
+.HorizontalScrollContainer::-webkit-scrollbar-thumb:hover {
+  background-color: #abc798;
+  outline: 1px solid #1f2421;
+}
+
+.Star {
+  color: #ffd449;
+}
+
+.StarOutline:hover {
+  color: #ffd449 !important;
+  outline: 1px solid #1f2421 !important; 
+}
+
+.Link {
+  color: 1f2421;
+}
