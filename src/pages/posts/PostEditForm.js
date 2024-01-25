@@ -85,7 +85,7 @@ function PostEditForm() {
   const textFields = (
     <div className="text-center">
       <Form.Group>
-        <Form.Label>Title</Form.Label>
+        <Form.Label>title</Form.Label>
         <Form.Control
           type="text"
           name="title"
@@ -100,7 +100,7 @@ function PostEditForm() {
       ))}
 
       <Form.Group>
-        <Form.Label>Content</Form.Label>
+        <Form.Label>content</Form.Label>
         <Form.Control
           as="textarea"
           rows={6}
@@ -121,7 +121,10 @@ function PostEditForm() {
       >
         cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Light}`} type="submit">
+      <Button
+        className={`${btnStyles.Button} ${btnStyles.Light}`}
+        type="submit"
+      >
         save edit
       </Button>
     </div>
