@@ -74,7 +74,7 @@ function PostCreateForm() {
 
   const textFields = (
     <div className="text-center">
-      <Form.Group>
+      <Form.Group controlId="restaurant">
         <Form.Label>restaurant</Form.Label>
         <Form.Control
           type="text"
@@ -88,8 +88,8 @@ function PostCreateForm() {
           {message}
         </Alert>
       ))}
-      <Form.Group>
-        <Form.Label>title</Form.Label>
+      <Form.Group controlId="title">
+        <Form.Label>menu</Form.Label>
         <Form.Control
           type="text"
           name="title"
@@ -102,7 +102,7 @@ function PostCreateForm() {
           {message}
         </Alert>
       ))}
-      <Form.Group>
+      <Form.Group controlId="content">
         <Form.Label>content</Form.Label>
         <Form.Control
           as="textarea"
@@ -117,8 +117,11 @@ function PostCreateForm() {
           {message}
         </Alert>
       ))}
-      <Form.Group>
-        <Form.Label>tag</Form.Label>
+      <Form.Group controlId="tag">
+        <Form.Label>
+          tag
+          <div className={styles.SmallLabel}>please only add one tag</div>
+        </Form.Label>
         <Form.Control
           type="text"
           name="tag"
