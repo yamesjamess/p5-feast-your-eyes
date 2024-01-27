@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import appStyles from "../../App.module.css";
 import styles from "../../styles/Tags.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const Tags = () => {
   const [tags, setTags] = useState({ allTags: { results: [] } });
@@ -38,7 +39,7 @@ const Tags = () => {
         <hr />
         <ul>
           {uniqueTags.map((tag, index) => (
-            <li key={index}>{tag}</li>
+            <li key={index}><Link to={`/posts/tag/${tag}`}>{tag}</Link></li>
           ))}
         </ul>
       </Container>
