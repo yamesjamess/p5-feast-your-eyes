@@ -10,11 +10,14 @@ import Asset from "../../components/Asset";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import NoResults from "../../assets/no-results.png";
 
+// TopRecommend component to display posts with the most recommendations
 const TopRecommend = ({ message }) => {
+  // State to manage recommended posts and loading status
   const [posts, setPosts] = useState({ recommendedPosts: { results: [] } });
   const { recommendedPosts } = posts;
   const [hasLoaded, setHasLoaded] = useState(false);
 
+  // Fetch recommended posts on component mount
   useEffect(() => {
     const handleMount = async () => {
       try {

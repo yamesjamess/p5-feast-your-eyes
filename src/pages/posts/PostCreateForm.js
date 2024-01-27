@@ -19,10 +19,15 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
 
+// PostCreateForm component for user to create post
 function PostCreateForm() {
+  // Redirect to the login page if the user is not logged in
   useRedirect("loggedOut");
+
+  // State to manage form validation errors
   const [errors, setErrors] = useState({});
 
+  // State to manage form data
   const [postData, setPostData] = useState({
     title: "",
     content: "",
@@ -30,11 +35,17 @@ function PostCreateForm() {
     restaurant: "",
     tag: "",
   });
+
+  // Destructuring form data
   const { title, content, image, restaurant, tag } = postData;
 
+  // Ref for the image input element
   const imageInput = useRef(null);
+
+  // History hook to handle navigation
   const history = useHistory();
 
+  // Event handler for input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -44,6 +55,7 @@ function PostCreateForm() {
     });
   };
 
+  // Event handler for image input changes
   const handleChangeImage = (event) => {
     if (event.target.files.length) {
       URL.revokeObjectURL(image);
@@ -54,6 +66,7 @@ function PostCreateForm() {
     }
   };
 
+  // Event handler for form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -75,6 +88,7 @@ function PostCreateForm() {
     }
   };
 
+  // JSX structure for form fields and buttons
   const textFields = (
     <div className="text-center">
       <Form.Group controlId="restaurant">

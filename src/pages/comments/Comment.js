@@ -8,6 +8,7 @@ import styles from "../../styles/Comment.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
 
+// Comment component to display comment
 const Comment = (props) => {
   const {
     profile_id,
@@ -20,11 +21,16 @@ const Comment = (props) => {
     setComments,
   } = props;
 
+  // Retrieve the current user from the context
   const currentUser = useCurrentUser();
+
+  // Check if the current user is the owner of the comment
   const is_owner = currentUser?.username === owner;
 
+  // State to manage the visibility of the edit form
   const [showEditForm, setShowEditForm] = useState(false);
 
+  // Event handler to delete a comment
   const handleDelete = async () => {
     const confirmDelete = window.confirm(
       "Are you sure you want to delete this post?"

@@ -16,9 +16,12 @@ import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
+// PostEditForm component for user to edit post
 function PostEditForm() {
+  // State to manage form validation errors
   const [errors, setErrors] = useState({});
 
+  // State to manage post data
   const [postData, setPostData] = useState({
     title: "",
     content: "",
@@ -26,12 +29,20 @@ function PostEditForm() {
     restaurant: "",
     tag: "",
   });
+
+  // Destructure post data
   const { title, content, image, restaurant, tag } = postData;
 
+  // Ref for the image input field
   const imageInput = useRef(null);
+
+  // History hook to handle navigation
   const history = useHistory();
+
+  // Get post id from route parameters
   const { id } = useParams();
 
+  // Fetch post details on component mount
   useEffect(() => {
     const handleMount = async () => {
       try {
@@ -48,6 +59,7 @@ function PostEditForm() {
     handleMount();
   }, [history, id]);
 
+  // Handle input change event
   const handleChange = (event) => {
     setPostData({
       ...postData,
@@ -55,6 +67,7 @@ function PostEditForm() {
     });
   };
 
+  // Handle image change event
   const handleChangeImage = (event) => {
     if (event.target.files.length) {
       URL.revokeObjectURL(image);
@@ -65,6 +78,7 @@ function PostEditForm() {
     }
   };
 
+  // Handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -88,6 +102,7 @@ function PostEditForm() {
     }
   };
 
+  // JSX structure for form fields and buttons
   const textFields = (
     <div className="text-center">
       <Form.Group controlId="restaurant">

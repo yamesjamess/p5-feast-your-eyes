@@ -12,7 +12,12 @@ import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { DropDownOptions } from "../../components/DropDownOptions";
 
+// Post component for displaying post
 const Post = (props) => {
+    // The component receives one props:
+  // - props: an object containing post's results
+
+  // Destructuring props
   const {
     id,
     owner,
@@ -33,14 +38,21 @@ const Post = (props) => {
     tag,
   } = props;
 
+  // Get current user from context
   const currentUser = useCurrentUser();
+
+  // Check if the current user is the owner of the post
   const is_owner = currentUser?.username === owner;
+
+  // History hook to handle navigation
   const history = useHistory();
 
+  // Function to navigate to the edit page of the post
   const handleEdit = () => {
     history.push(`/posts/${id}/edit`);
   };
 
+  // Function to handle post deletion
   const handleDelete = async () => {
     const confirmDelete = window.confirm(
       "Are you sure you want to delete this post?"
@@ -55,6 +67,7 @@ const Post = (props) => {
     }
   };
 
+  // Function to handle post like
   const handleLike = async () => {
     try {
       const { data } = await axiosRes.post("/likes/", { post: id });
@@ -71,6 +84,7 @@ const Post = (props) => {
     }
   };
 
+  // Function to handle post unlike
   const handleUnlike = async () => {
     try {
       await axiosRes.delete(`/likes/${like_id}/`);
@@ -87,6 +101,7 @@ const Post = (props) => {
     }
   };
 
+  // Function to handle post recommend
   const handleRecommend = async () => {
     try {
       const { data } = await axiosRes.post("/recommends/", { post: id });
@@ -107,6 +122,7 @@ const Post = (props) => {
     }
   };
 
+  // Function to handle post unrecommend
   const handleUnrecommend = async () => {
     try {
       await axiosRes.delete(`/recommends/${recommend_id}/`);

@@ -7,6 +7,7 @@ import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
+// Error404 component to display custom 404 page
 const Error404 = () => {
   return (
     <Container className={styles.Contents}>

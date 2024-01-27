@@ -3,6 +3,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import styles from "../styles/DropDownOptions.module.css";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
+// Custom caret component for the Dropdown.Toggle
 const Caret = React.forwardRef(({ onClick }, ref) => (
   <i
     className="fa-solid fa-angle-down"
@@ -14,6 +15,7 @@ const Caret = React.forwardRef(({ onClick }, ref) => (
   />
 ));
 
+// DropDownOptions component for generic dropdown options like edit and delete
 export const DropDownOptions = ({ handleEdit, handleDelete }) => {
   return (
     <Dropdown className={`ml-auto`} drop="left">
@@ -42,6 +44,7 @@ export const DropDownOptions = ({ handleEdit, handleDelete }) => {
   );
 };
 
+// ProfileEditDropdown component for profile-related dropdown options
 export function ProfileEditDropdown({ id }) {
   const history = useHistory();
   return (

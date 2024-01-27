@@ -5,9 +5,13 @@ import styles from "../../styles/Tags.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
+// Tags component to display list of tags
 const Tags = () => {
+  // State to manage tags data
   const [tags, setTags] = useState({ allTags: { results: [] } });
   const { allTags } = tags;
+
+  // Fetch all posts to extract tags
   useEffect(() => {
     const fetchData = async () => {
       try {

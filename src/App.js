@@ -22,7 +22,10 @@ import Error404 from "./pages/error/Error404";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 
 function App() {
+  // Get current user from context
   const currentUser = useCurrentUser();
+  
+  // Get the profile ID or an empty string if not available
   const profile_id = currentUser?.profile_id || "";
 
   return (

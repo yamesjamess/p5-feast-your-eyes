@@ -5,15 +5,20 @@ import { axiosRes } from "../../api/axiosDefaults";
 
 import styles from "../../styles/CommentCreateEditForm.module.css";
 
+// CommentEditForm component for user to edit comment
 function CommentEditForm(props) {
+  // Destructuring props
   const { id, content, setShowEditForm, setComments } = props;
 
+  // State to manage the content of the edited comment
   const [formContent, setFormContent] = useState(content);
 
+  // Event handler for updating the form content on input change
   const handleChange = (event) => {
     setFormContent(event.target.value);
   };
 
+  // Event handler for submitting the edited comment
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {

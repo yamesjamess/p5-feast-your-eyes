@@ -17,24 +17,35 @@ import Modal from "react-bootstrap/Modal";
 import axios from "axios";
 import { useRedirect } from "../../hooks/useRedirect";
 
+// RegisterForm component for user registration
 const RegisterForm = () => {
+  // Redirect user based on authentication status
   useRedirect("loggedIn");
+
+  // State to manage registration form data
   const [registerData, setRegisterData] = useState({
     username: "",
     password1: "",
     password2: "",
   });
+
+  // Destructure form data
   const { username, password1, password2 } = registerData;
 
+  // State to manage form validation errors
   const [errors, setErrors] = useState({});
 
+  // History hook to handle navigation
   const history = useHistory();
 
+  // State for controlling the display of the rules modal
   const [show, setShow] = useState(false);
 
+  // Function to close/open the rules modal
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  // Event handler for input changes in the form
   const handleChange = (event) => {
     setRegisterData({
       ...registerData,
@@ -42,6 +53,7 @@ const RegisterForm = () => {
     });
   };
 
+  // Event handler for form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {

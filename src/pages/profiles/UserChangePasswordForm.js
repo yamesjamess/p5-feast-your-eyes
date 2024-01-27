@@ -14,19 +14,28 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
+// UserChangePasswordForm component for use to change password
 const UserChangePasswordForm = () => {
+  // History hook to handle navigation
   const history = useHistory();
+
+  // Access profile ID from URL params
   const { id } = useParams();
+
+  // Access current user data from context
   const currentUser = useCurrentUser();
 
+  // State to manage user data for changing password
   const [userData, setUserData] = useState({
     new_password1: "",
     new_password2: "",
   });
   const { new_password1, new_password2 } = userData;
 
+  // State to manage errors during form submission
   const [errors, setErrors] = useState({});
 
+  // Event handler for input changes
   const handleChange = (event) => {
     setUserData({
       ...userData,
@@ -34,12 +43,14 @@ const UserChangePasswordForm = () => {
     });
   };
 
+  // Check if the current user is authorized to change their password
   useEffect(() => {
     if (currentUser?.profile_id?.toString() !== id) {
       history.push("/");
     }
   }, [currentUser, history, id]);
 
+  // Event handler for form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {

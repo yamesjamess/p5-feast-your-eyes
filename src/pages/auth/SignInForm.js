@@ -18,20 +18,30 @@ import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/useRedirect";
 
+// SignInForm component for user sign in
 function SignInForm() {
+  // Context hook to set the current user
   const setCurrentUser = useSetCurrentUser();
+
+  // Redirect user based on authentication status
   useRedirect("loggedIn");
+
+  // State to manage sign-in form data
   const [signInData, setSignInData] = useState({
     username: "",
     password: "",
   });
 
+  // Destructure sign-in form data
   const { username, password } = signInData;
 
+  // State to manage form validation errors
   const [errors, setErrors] = useState({});
 
+  // History hook to handle navigation
   const history = useHistory();
 
+  // Event handler for input changes in the form
   const handleChange = (event) => {
     setSignInData({
       ...signInData,
@@ -39,6 +49,7 @@ function SignInForm() {
     });
   };
 
+  // Event handler for form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {

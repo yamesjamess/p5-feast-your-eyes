@@ -18,13 +18,22 @@ import {
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
+// ProfileEditForm component for user to edit their profile
 const ProfileEditForm = () => {
+  // Access current user data and set current user function from context
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
+
+  // Access profile ID from URL params
   const { id } = useParams();
+
+  // History hook to handle navigation
   const history = useHistory();
+
+  // Create a ref for the image file input
   const imageFile = useRef();
 
+  // State to manage profile data, errors, and form submission
   const [profileData, setProfileData] = useState({
     name: "",
     content: "",
@@ -34,6 +43,7 @@ const ProfileEditForm = () => {
 
   const [errors, setErrors] = useState({});
 
+  // Fetch profile data on component mount
   useEffect(() => {
     const handleMount = async () => {
       if (currentUser?.profile_id?.toString() === id) {
@@ -53,6 +63,7 @@ const ProfileEditForm = () => {
     handleMount();
   }, [currentUser, history, id]);
 
+  // Handle changes in form fields
   const handleChange = (event) => {
     setProfileData({
       ...profileData,
@@ -60,6 +71,7 @@ const ProfileEditForm = () => {
     });
   };
 
+  // Handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();

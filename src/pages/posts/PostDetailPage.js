@@ -16,14 +16,24 @@ import Asset from "../../components/Asset";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 
+// PostDetailPage component to display a detailed view of a post
 function PostDetailPage() {
+  // Extracting post id from route parameters
   const { id } = useParams();
+
+  // State to manage the post details
   const [post, setPost] = useState({ results: [] });
 
+  // Get current user from context
   const currentUser = useCurrentUser();
+
+  // Extract profile image from the current user, if available
   const profile_image = currentUser?.profile_image;
+
+  // State to manage comments associated with the post
   const [comments, setComments] = useState({ results: [] });
 
+  // Fetch post details and comments on component mount
   useEffect(() => {
     const handleMount = async () => {
       try {

@@ -18,13 +18,20 @@ import PopularProfiles from "../profiles/PopularProfiles";
 import TopRecommend from "../recommends/TopRecommend";
 import Tags from "./Tags";
 
-
+// TagPostList component to display posts based on tag selected
 const TagPostList = ({message}) => {
+
+  // State to manage posts and loading status
   const [hasLoaded, setHasLoaded] = useState(false);
   const [posts, setPosts] = useState({ results: [] });
+
+  // Access post tag from URL params
   const { tag } = useParams();
+
+  // Extracting the current URL path
   const { pathname } = useLocation();
 
+  // Fetch posts with the specified tag
   useEffect(() => {
     const fetchData = async () => {
       try {

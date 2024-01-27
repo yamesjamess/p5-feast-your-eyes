@@ -1,5 +1,6 @@
 import { axiosReq } from "../api/axiosDefaults";
 
+// Function to fetch more data (pagination)
 export const fetchMoreData = async (resource, setResource) => {
   try {
     const { data } = await axiosReq.get(resource.next);
@@ -15,6 +16,7 @@ export const fetchMoreData = async (resource, setResource) => {
   } catch (error) {}
 };
 
+// Helper function for handling follow action
 export const followHelper = (profile, clickedProfile, following_id) => {
   return profile.id === clickedProfile.id
     ? {
@@ -27,6 +29,7 @@ export const followHelper = (profile, clickedProfile, following_id) => {
     : profile;
 };
 
+// Helper function for handling unfollow action
 export const unfollowHelper = (profile, clickedProfile) => {
   return profile.id === clickedProfile.id
     ? {

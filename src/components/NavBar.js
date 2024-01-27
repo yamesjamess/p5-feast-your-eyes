@@ -13,12 +13,16 @@ import Avatar from "./Avatar";
 import axios from "axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 
+// NavBar component for the application's navigation bar
 const NavBar = () => {
+  // Retrieve current user and set current user from context
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
+  // Use a custom hook to manage click outside toggle
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
+  // Function to handle user logout
   const handleLogOut = async () => {
     try {
       await axios.post("dj-rest-auth/logout/");
@@ -27,11 +31,15 @@ const NavBar = () => {
       console.log(err);
     }
   };
+
+  // Navigation link for adding a new post
   const addPostIcon = (
     <NavLink to="/posts/create" activeClassName={styles.Active}>
       <i className="fa-solid fa-plus"></i>add post
     </NavLink>
   );
+
+  // Navigation icons for logged-in users
   const loggedInIcons = (
     <>
       <NavLink to="/feed" activeClassName={styles.Active}>
@@ -55,6 +63,8 @@ const NavBar = () => {
       </NavLink>
     </>
   );
+
+  // Navigation icons for logged-out users
   const loggedOutIcons = (
     <>
       <NavLink to="/signin" activeClassName={styles.Active}>

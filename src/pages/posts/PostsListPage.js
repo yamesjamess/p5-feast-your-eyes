@@ -19,14 +19,28 @@ import PopularProfiles from "../profiles/PopularProfiles";
 import TopRecommend from "../recommends/TopRecommend";
 import Tags from "../tags/Tags";
 
+// PostsListPage component to display multiple posts
 function PostsListPage({ message, filter = "" }) {
+  // The component receives two props:
+  // - message: an array containing string of a message
+  // - filter: an empty string to be user for fitering searches
+
+  // State to manage the list of posts
   const [posts, setPosts] = useState({ results: [] });
+
+  // State to track whether the component has loaded or not
   const [hasLoaded, setHasLoaded] = useState(false);
+
+  // Get current pathname from the URL
   const { pathname } = useLocation();
+
+  // Get the current user from the context
   const currentUser = useCurrentUser();
 
+  // State to manage the search query
   const [query, setQuery] = useState("");
 
+  // useEffect hook to fetch posts when the component mounts or when the filter or query changes
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -64,7 +78,7 @@ function PostsListPage({ message, filter = "" }) {
             placeholder="search posts"
           />
         </Form>
-        <TopRecommend message="Sorry! No results found!"/>   
+        <TopRecommend message="sorry! no results found!"/>   
         {hasLoaded ? (
           <>
             {posts.results.length ? (

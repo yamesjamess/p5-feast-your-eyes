@@ -3,26 +3,33 @@ import { axiosReq, axiosRes } from "../api/axiosDefaults";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
 import { followHelper, unfollowHelper } from "../utils/utils";
 
+// Create a context to store the profile data
 const ProfileDataContext = createContext();
 const SetProfileDataContext = createContext();
 
+// Custom hooks to access the profile data and set profile data from context
 export const useProfileData = () => useContext(ProfileDataContext);
 export const useSetProfileData = () => useContext(SetProfileDataContext);
 
+// Provider component to manage the profile data state
 export const ProfileDataProvider = ({ children }) => {
+  // State to hold the profile data
   const [profileData, setProfileData] = useState({
     pageProfile: { results: [] },
     popularProfiles: { results: [] },
   });
 
+  // Access the current user from the CurrentUserContext
   const currentUser = useCurrentUser();
 
+  // Function to handle follow action
   const handleFollow = async (clickedProfile) => {
     try {
       const { data } = await axiosRes.post("/followers/", {
         followed: clickedProfile.id,
       });
 
+      // Update the profile data state after a successful follow
       setProfileData((prevState) => ({
         ...prevState,
         pageProfile: {
@@ -42,10 +49,12 @@ export const ProfileDataProvider = ({ children }) => {
     }
   };
 
+  // Function to handle unfollow action
   const handleUnfollow = async (clickedProfile) => {
     try {
       await axiosRes.delete(`/followers/${clickedProfile.following_id}/`);
 
+      // Update the profile data state after a successful unfollow
       setProfileData((prevState) => ({
         ...prevState,
         pageProfile: {
@@ -65,12 +74,14 @@ export const ProfileDataProvider = ({ children }) => {
     }
   };
 
+  // Use useEffect to fetch popular profiles data on component mount or when currentUser changes
   useEffect(() => {
     const handleMount = async () => {
       try {
         const { data } = await axiosReq.get(
           "/profiles/?ordering=-followers_count"
         );
+        // Update the profile data state with popular profiles data
         setProfileData((prevState) => ({
           ...prevState,
           popularProfiles: data,

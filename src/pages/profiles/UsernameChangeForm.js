@@ -17,16 +17,26 @@ import {
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
+// UsernameChangeForm component for user to change their username
 const UsernameChangeForm = () => {
+  
+  // State to manage the new username
   const [username, setUsername] = useState("");
+
+  // State to manage form validation errors
   const [errors, setErrors] = useState({});
 
+  // History hook to handle navigation
   const history = useHistory();
+
+  // Access profile ID from URL params
   const { id } = useParams();
 
+  // Access current user data and setCurrentUser function from context
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
+  // Set the initial username value when the component mounts
   useEffect(() => {
     if (currentUser?.profile_id?.toString() === id) {
       setUsername(currentUser.username);

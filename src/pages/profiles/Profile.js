@@ -7,13 +7,18 @@ import Button from "react-bootstrap/Button";
 import Avatar from "../../components/Avatar";
 import { useSetProfileData } from "../../contexts/ProfileDataContext";
 
+// Profile component to display a profile
 const Profile = (props) => {
+  // Destructure props to access profile data and optional parameters
   const { profile, mobile, imageSize = 45 } = props;
   const { id, following_id, image, owner } = profile;
 
+  // Access current user data from the CurrentUserContext
   const currentUser = useCurrentUser();
+  // Check if the current user is the owner of the profile
   const is_owner = currentUser?.username === owner;
 
+  // Access follow and unfollow functions from the ProfileDataContext
   const {handleFollow, handleUnfollow} = useSetProfileData();
 
   return (
