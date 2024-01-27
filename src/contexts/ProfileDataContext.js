@@ -37,8 +37,8 @@ export const ProfileDataProvider = ({ children }) => {
           ),
         },
       }));
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.log(err);
     }
   };
 
@@ -60,8 +60,8 @@ export const ProfileDataProvider = ({ children }) => {
           ),
         },
       }));
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.log(err);
     }
   };
 

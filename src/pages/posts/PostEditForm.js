@@ -41,8 +41,8 @@ function PostEditForm() {
         is_owner
           ? setPostData({ title, content, image, restaurant, tag })
           : history.push("/");
-      } catch (error) {
-        console.log(error);
+      } catch (err) {
+        console.log(err);
       }
     };
     handleMount();
