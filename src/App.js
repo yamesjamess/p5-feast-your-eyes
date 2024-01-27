@@ -15,6 +15,7 @@ import UsernameChangeForm from "./pages/profiles/UsernameChangeForm";
 import UserChangePasswordForm from "./pages/profiles/UserChangePasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import TagPostList from "./pages/tags/TagPostList";
+import Error404 from "./pages/error/Error404";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -82,7 +83,7 @@ function App() {
             render={() => <ProfileEditForm />}
           />
           <Route exact path="/posts/tag/:tag" render={() => <TagPostList message="sorry! no results found!"/>} />
-          <Route render={() => <h1>error 404 - page not found!</h1>} />
+          <Route render={() => <Error404 />} />
         </Switch>
       </Container>
     </div>
