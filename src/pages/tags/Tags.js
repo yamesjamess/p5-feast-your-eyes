@@ -27,19 +27,19 @@ const Tags = () => {
   const uniqueTags = Array.from(
     new Set(
       allTags?.results
-        .map((post) => post.tag.trim())
+        .map((post) => post.tag.trim().toLowerCase())
         .filter((tag) => tag !== "")
     )
-  );
+  ).sort();
 
   return (
     <>
       <Container className={`${appStyles.Content} ${styles.TagContainer}`}>
-        <div>filter by tags</div>
+        <p className={styles.Header}>filter by tags</p>
         <hr />
         <ul>
           {uniqueTags.map((tag, index) => (
-            <li key={index}><Link to={`/posts/tag/${tag}`}>{tag}</Link></li>
+            <li key={index}><Link to={`/posts/tag/${tag}`} className={styles.Tags}>{tag}</Link></li>
           ))}
         </ul>
       </Container>
