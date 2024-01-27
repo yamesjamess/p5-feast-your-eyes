@@ -34,9 +34,11 @@ function PostCreateForm() {
   const history = useHistory();
 
   const handleChange = (event) => {
+    const { name, value } = event.target;
+
     setPostData({
       ...postData,
-      [event.target.name]: event.target.value,
+      [name]: name === 'tag' ? value.toLowerCase() : value,
     });
   };
 
