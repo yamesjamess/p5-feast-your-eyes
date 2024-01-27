@@ -9,6 +9,7 @@ import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsListPage.module.css";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import Post from "./Post";
 import Asset from "../../components/Asset";
 import NoResults from "../../assets/no-results.png";
@@ -22,6 +23,7 @@ function PostsListPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
+  const currentUser = useCurrentUser();
 
   const [query, setQuery] = useState("");
 
@@ -43,7 +45,7 @@ function PostsListPage({ message, filter = "" }) {
     return () => {
       clearTimeout(timer);
     };
-  }, [filter, query, pathname]);
+  }, [filter, query, pathname, currentUser]);
 
   return (
     <Row className="h-100">
