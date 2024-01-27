@@ -6,7 +6,7 @@
   text-align: center;
 }
 
-.PostHeader {
+.PostHeader{
   background-color: #abc798;
 }
 
@@ -24,7 +24,7 @@ h5 {
   color: #44503d;
 }
 
-.HeartOutline:hover {
+.HeartOutline, .HeartOutline:hover, .CommentOutline, CommentOutline:hover {
   color: #44503d;
 }
 
@@ -32,6 +32,6 @@ h5 {
   color: #ffd449;
 }
 
-.StarOutline:hover {
+.StarOutline, .StarOutline:hover {
   color: #ffd449;
 }

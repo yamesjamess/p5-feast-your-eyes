@@ -201,7 +201,7 @@ const Post = (props) => {
           {recommends_count}
 
           <Link to={`/posts/${id}`}>
-            <i className="fa-regular fa-comments" />
+            <i className={`fa-regular fa-comments ${styles.CommentOutline}`} />
           </Link>
           {comments_count}
         </div>
