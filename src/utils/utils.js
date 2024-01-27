@@ -1,3 +1,4 @@
+import jwtDecode from "jwt-decode";
 import { axiosReq } from "../api/axiosDefaults";
 
 // Function to fetch more data (pagination)
@@ -40,4 +41,20 @@ export const unfollowHelper = (profile, clickedProfile) => {
     : profile.is_owner
     ? { ...profile, following_count: profile.following_count - 1 }
     : profile;
+};
+
+// Function to set the expiration timestamp of the refresh token in the local storage.
+export const setTokenTimestamp = (data) => {
+  const refreshTokenTimestamp = jwtDecode(data?.refresh_token).exp;
+  localStorage.setItem("refreshTokenTimestamp", refreshTokenTimestamp);
+};
+
+// Function to check whether there is a stored refresh token timestamp in the local storage.
+export const shouldRefreshToken = () => {
+  return !!localStorage.getItem("refreshTokenTimestamp");
+};
+
+// Function to remove the refresh token timestamp from the local storage.
+export const removeTokenTimestamp = () => {
+  localStorage.removeItem("refreshTokenTimestamp");
 };
