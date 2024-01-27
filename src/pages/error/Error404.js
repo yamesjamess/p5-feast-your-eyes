@@ -7,7 +7,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const Error404 = () => {
   return (
-    <Container className="d-flex align-items-center justify-content-center flex-column text-center">
+    <Container className={styles.Contents}>
       <Image
         src={image404}
         alt="error 404 - page not found"

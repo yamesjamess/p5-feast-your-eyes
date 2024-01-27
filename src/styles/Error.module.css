@@ -1,0 +1,13 @@
+.Message {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.Contents {
+    margin-top: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
