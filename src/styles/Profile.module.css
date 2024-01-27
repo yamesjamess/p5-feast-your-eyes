@@ -5,3 +5,8 @@
 .Dark {
     color: #44503d;
 }
+
+.Header {
+  text-decoration: underline;
+  font-weight: bold;
+}
