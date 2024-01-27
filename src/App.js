@@ -14,6 +14,7 @@ import ProfilePage from "./pages/profiles/ProfilePage";
 import UsernameChangeForm from "./pages/profiles/UsernameChangeForm";
 import UserChangePasswordForm from "./pages/profiles/UserChangePasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
+import TagPostList from "./pages/tags/TagPostList";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -27,14 +28,14 @@ function App() {
           <Route
             exact
             path="/"
-            render={() => <PostsListPage message="Sorry! No results found!" />}
+            render={() => <PostsListPage message="sorry! no results found!" />}
           />
           <Route
             exact
             path="/feed"
             render={() => (
               <PostsListPage
-                message="No results found. Change your query or follow a user."
+                message="no results found. change your query or follow a user."
                 filter={`owner__followed__owner__profile=${profile_id}&`}
               />
             )}
@@ -44,7 +45,7 @@ function App() {
             path="/liked"
             render={() => (
               <PostsListPage
-                message="No results found. Change your query or like a post."
+                message="no results found. change your query or like a post."
                 filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
               />
             )}
@@ -54,7 +55,7 @@ function App() {
             path="/recommended"
             render={() => (
               <PostsListPage
-                message="No results found. Change your query or recommend a post."
+                message="no results found. change your query or recommend a post."
                 filter={`recommends__owner__profile=${profile_id}&ordering=-recommends__created_at&`}
               />
             )}
@@ -80,7 +81,8 @@ function App() {
             path="/profiles/:id/edit"
             render={() => <ProfileEditForm />}
           />
-          <Route render={() => <h1>Error 404 - Page not found!</h1>} />
+          <Route exact path="/posts/tag/:tag" render={() => <TagPostList message="sorry! no results found!"/>} />
+          <Route render={() => <h1>error 404 - page not found!</h1>} />
         </Switch>
       </Container>
     </div>
