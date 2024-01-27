@@ -2,7 +2,9 @@ import React from "react";
 import image404 from "../../assets/error404.png";
 import btnStyles from "../../styles/Button.module.css";
 import styles from "../../styles/Error.module.css";
-import { Button, Container, Image } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
+import Image from "react-bootstrap/Image";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const Error404 = () => {

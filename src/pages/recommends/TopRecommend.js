@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Card, Col, Row } from "react-bootstrap";
+
+import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+
 import styles from "../../styles/TopRecommend.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 import Asset from "../../components/Asset";

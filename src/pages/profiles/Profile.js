@@ -3,7 +3,7 @@ import styles from "../../styles/Profile.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import { Button } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 import Avatar from "../../components/Avatar";
 import { useSetProfileData } from "../../contexts/ProfileDataContext";
 
