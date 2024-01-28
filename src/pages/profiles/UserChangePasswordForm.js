@@ -55,6 +55,7 @@ const UserChangePasswordForm = () => {
     event.preventDefault();
     try {
       await axiosRes.post("/dj-rest-auth/password/change/", userData);
+      alert("password changed successfully!");
       history.goBack();
     } catch (err) {
       console.log(err);

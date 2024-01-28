@@ -55,6 +55,7 @@ const UsernameChangeForm = () => {
         ...prevUser,
         username,
       }));
+      alert("username changed successfully!");
       history.goBack();
     } catch (err) {
       console.log(err);
