@@ -8,11 +8,13 @@ import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
 
-import { Link } from "react-router-dom";
-
 import styles from "../../styles/RegisterSignInForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
+
+import SignInHero from "../../assets/SignInHero.jpg"
+
+import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
@@ -128,7 +130,7 @@ function SignInForm() {
         md={6}
         className={`my-auto d-none d-md-block p-2 ${styles.SignInCol}`}
       >
-        <Image className={`${appStyles.FillerImage}`} src={"#"} />
+        <Image className={`${appStyles.FillerImage} ${styles.BackgroundImage}`} src={SignInHero} />
       </Col>
     </Row>
   );

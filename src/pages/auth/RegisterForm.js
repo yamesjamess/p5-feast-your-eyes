@@ -14,6 +14,8 @@ import Row from "react-bootstrap/Row";
 import Alert from "react-bootstrap/Alert";
 import Modal from "react-bootstrap/Modal";
 
+import RegisterHero from "../../assets/RegisterHero.jpg"
+
 import axios from "axios";
 import { useRedirect } from "../../hooks/useRedirect";
 
@@ -70,7 +72,7 @@ const RegisterForm = () => {
         md={6}
         className={`my-auto d-none d-md-block p-2 ${styles.RegisterCol}`}
       >
-        <Image className={`${appStyles.FillerImage}`} src={"#"} />
+        <Image className={`${appStyles.FillerImage}`} src={RegisterHero} />
       </Col>
       <Col className="my-auto py-2 p-md-2" md={6}>
         <Container className={`${appStyles.Content} p-4 `}>
