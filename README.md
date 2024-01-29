@@ -467,14 +467,72 @@ To unlock additional features such as liking/unliking posts and submitting revie
 ### Feature that could be implemented in the future
 
 - Allow admin/superuser to perform edit/delete post/profile from front end.
+
   - Currently only owner of the post/profile can edit/delete from the front end.
   - Admin/superuser have to use admin panel.
 
 - Add dropdown for posts in profile view.
+
   - Currently from the profile view does not allow owner user to edit/delete their post.
 
 - Add emoji reactions.
+
   - To provide user with a more fun experience, they can use emojis to express their opinion without having to add comment.
 
 - Google map integration.
   - Integrate Google map's API to display where the restaurant is.
+
+## Design
+
+### Wireframe
+
+**Balsamiq** - The wireframe for the website have been designed using Balsamiq. The wireframe only represents the initial design concept and does not reflect the finishing product.
+
+<details>
+<summary>Wireframes</summary>
+
+- Home
+  ![Wireframe - Home](documentation/supporting_images/wireframe/wireframe_home.png)
+
+- Register
+  ![Wireframe - Register](documentation/supporting_images/wireframe/wireframe_register.png)
+
+- Sign in
+  ![Wireframe - Sign In](documentation/supporting_images/wireframe/wireframe_signin.png)
+
+- Add post
+  ![Wireframe - Add Post](documentation/supporting_images/wireframe/wireframe_add_post.png)
+
+- Post detail
+  ![Wireframe - Post Detail](documentation/supporting_images/wireframe/wireframe_post_detail.png)
+
+- Profile page
+  ![Wireframe - Profile Page](documentation/supporting_images/wireframe/wireframe_profile.png)
+
+- Modal
+  ![Wireframe - Modal](documentation/supporting_images/wireframe/wireframe_modal.png)
+
+- Error page
+  ![Wireframe - Error](documentation/supporting_images/wireframe/wireframe_error.png)
+
+ </details>
+
+### Entity-Relationship for the Database
+  * The ER model is created on **Lucidchart**
+  - Profile
+    - The Profile model has a 1 to 1 relationship with User model. Because of the signal in the Profile model. A User object is created when Profile is created.
+    - The Profile Model has a one to many relationship with Follower, as one profile can follow many profiles.
+  - User
+    - The User model has a one to many relationship with Follower, as one profile can have many followers.
+    - The User model has a one to many relationship with Like, as one profile can have many likes.
+    - The User model has a one to many relationship with Recommend, as one profile can have many recommendations.
+    - The User model has a one to many relationship with Comment, as one profile can have many comments.
+    - The User model has a one to many relationship with Post, as one profile can have many posts.
+  - Post
+    - The Post model has a many to one relationship with Likes, as one post can have many likes.
+    - The Post model has a many to one relationship with Recommend, as one post can have many recommendations.
+    - The Post model has a many to one relationship with Comment, as one post can have many comments.
+
+  ![ER Model](documentation/supporting_images/er-diagram.png)
+
+  
