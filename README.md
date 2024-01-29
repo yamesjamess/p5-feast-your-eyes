@@ -14,8 +14,6 @@ To unlock additional features such as liking/unliking posts and submitting revie
 
 ## Table of Contents
 
----
-
 - [User Experience](#user-experience)
 - [Features](#features)
 - [Design](#design)
@@ -126,16 +124,74 @@ To unlock additional features such as liking/unliking posts and submitting revie
 
 ### Existing Back End Features
 
+**BE Feature (#1)** : Django Rest Framwork
+
+- Since the front end website is being built using React, there is no need for the backend server to return HTML documents.
+- Django Rest Framework is a powerful tool to create, read, update, delete data in JSON form.
+
+**BE Feature (#2)** : Profile Model
+
+- The profile model includes these fileds
+  - owner: a 1to1 field linking with User model that is created upon successful profile creation. Cascade on deletion.
+  - created_at: DateTimeField with auto_now_add=True
+  - updated_at: DateTimeField with auto_now=True
+  - name: CharField with max length of 255 (optional)
+  - content: TextField (optional)
+  - image: ImageField (optional, placeholder is add on creation)
+
+**BE Feature (#3)** : Post Model
+
+- The post model includes these fileds
+  - owner: ForeignKey field linking with User model. Cascade on deletion.
+  - created_at: DateTimeField with auto_now_add=True
+  - updated_at: DateTimeField with auto_now=True
+  - restaurant: CharField with max length of 255
+  - title: CharField with max length of 255
+  - name: CharField with max length of 30 (optional)
+  - content: TextField (optional)
+  - image: ImageField (optional, placeholder is add on creation)
+  - image_filter: CharField with choices.
+
+**BE Feature (#4)** : Like Model
+
+- The like model includes these fileds
+  - owner: ForeignKey field linking with User model. Cascade on deletion.
+  - post: ForeignKey field linking with Post model. Cascade on deletion.
+  - created_at: DateTimeField with auto_now_add=True
+
+**BE Feature (#5)** : Comment Model
+
+- The comment model includes these fileds
+  - owner: ForeignKey field linking with User model. Cascade on deletion.
+  - post: ForeignKey field linking with Post model. Cascade on deletion.
+  - created_at: DateTimeField with auto_now_add=True
+  - updated_at: DateTimeField with auto_now=True
+  - content: TextField
+
+**BE Feature (#6)** : Recommended Model
+
+- The recommend model includes these fileds
+  - owner: ForeignKey field linking with User model. Cascade on deletion.
+  - post: ForeignKey field linking with Post model. Cascade on deletion.
+  - created_at: DateTimeField with auto_now_add=True
+
+**BE Feature (#7)** : Follower Model
+
+- The follower model includes these fileds
+  - owner: ForeignKey field linking with User model. Cascade on deletion.
+  - followed: ForeignKey field linking with User model. Cascade on deletion.
+  - created_at: DateTimeField with auto_now_add=True
+
 ### Existing Front End Features
 
-**Feature (#1)** : React
+**FE Feature (#1)** : React
 
 - The website is created using React to render the user interface (UI).
 - The data is accessed through a Django Rest Framework API.
 - Using React gives the user a seamless expreience when using the website since there are no loading screens between each page visit.
 - All the components are independently refreshed based on their dependencies in the useEffect hook.
 
-**Feature (#2)** : Navigation bar
+**FE Feature (#2)** : Navigation bar
 
 - The navigation bar's design and placement is consistent on every page.
 - The navigation bar features the brand's Logo and Home links
@@ -149,14 +205,14 @@ To unlock additional features such as liking/unliking posts and submitting revie
 
 ![Navbar Small](documentation/supporting_images/navbar/nar_hamburger.png)
 
-**Feature (#3)** : Home Page
+**FE Feature (#3)** : Home Page
 
 - The home page is also known as the posts list page, is a page where all the posts that has been created are displayed to the user.
 - The home page features the search bar, top 5 recommended posts, most followed profile list, filter by tags lists, and lists of posts.
 
 ![Home Page](documentation/supporting_images/fye_home.png)
 
-**Feature (#4)** : User Registration
+**FE Feature (#4)** : User Registration
 
 - To fully utilise the website's function the user need to be signed in.
 - The user can create an account by visiting the Registration page.
@@ -167,14 +223,14 @@ To unlock additional features such as liking/unliking posts and submitting revie
 
 ![Register error](documentation/supporting_images/fye_register_error.png)
 
-**Feature (#5)** : Rules/Guidelines Modal
+**FE Feature (#5)** : Rules/Guidelines Modal
 
 - To ensure that the user are aware of the Rules/Guidelines for using the website before they create an account, the rules link is place right before the user submits the form.
 - The Rules/Guidelines modal are also placed within PostCreateForm and PostEditForm to remind the user.
 
 ![Rules modal](documentation/supporting_images/fye_rules_modal.png)
 
-**Feature (#6)** : User Sign in
+**FE Feature (#6)** : User Sign in
 
 - To fully utilise the website's function the user need to be signed in.
 - The user can enter their credentials and sign in to the system.
@@ -185,7 +241,7 @@ To unlock additional features such as liking/unliking posts and submitting revie
 
 ![Sign in error](documentation/supporting_images/fye_sign_in_error.png)
 
-**Feature (#7)** : Add Post
+**FE Feature (#7)** : Add Post
 
 - Only signed in user can use this feature.
 - The user can click the button the appear instead of the Feast Your Eye text icon to create a post.
@@ -197,7 +253,7 @@ To unlock additional features such as liking/unliking posts and submitting revie
 ![Add post](documentation/supporting_images/post/post_add.png)
 ![Add post error](documentation/supporting_images/post/post_add_error.png)
 
-**Feature (#8)** : Search bar
+**FE Feature (#8)** : Search bar
 
 - The search bar is featured on the top of the home page. It is also available on the Feed, Liked, and Recommended page.
 - The user doesn't require to sign in to use the search bar, however the search function on Feed, Liked, and Recommended page won't be available since those pages are only available after signing in.
@@ -213,7 +269,7 @@ To unlock additional features such as liking/unliking posts and submitting revie
 
 ![Search spinner](documentation/supporting_images/post/post_search_spinner.png)
 
-**Feature (#9)** : Top 5 Recommended
+**FE Feature (#9)** : Top 5 Recommended
 
 - The Top 5 Recommended display 5 posts with the most recommendation counts.
 - It only displays the image, menu, recommendation counts and star icon to limit overloading user with information and cluttering.
@@ -221,7 +277,7 @@ To unlock additional features such as liking/unliking posts and submitting revie
 
 ![Top Recommended](documentation/supporting_images/recommend/recommend_top.png)
 
-**Feature (#10)** : Popular Profile
+**FE Feature (#10)** : Popular Profile
 
 - On the right handside of the screen, the users can see which profile has the most followers
 - Only signed in user can see the follow/unfollow button.
@@ -233,7 +289,7 @@ To unlock additional features such as liking/unliking posts and submitting revie
 
 ![Popular profiles mobile](documentation/supporting_images/follow/popular_mobile.png)
 
-**Feature (#11)** : Posts List
+**FE Feature (#11)** : Posts List
 
 - Underneath the Top 5 Recommended container, the user can find the Posts list.
 - The Posts list displays all the post and their details (restaurant, menu, content, tag, like button, like count, recommend button, recommend count, comment button, comment count) from all users.
@@ -241,7 +297,7 @@ To unlock additional features such as liking/unliking posts and submitting revie
 
 ![Posts List](documentation/supporting_images/post/post_list.png)
 
-**Feature (#12)** : Filter by tags
+**FE Feature (#12)** : Filter by tags
 
 - Underneath the Popular Profiles, the user can find the filter by tags links
 - When the use clicks the tag link, it will display the user all the posts with that tag.
@@ -251,7 +307,7 @@ To unlock additional features such as liking/unliking posts and submitting revie
 
 ![Tag filter view](documentation/supporting_images/tag/tag_filter_view.png)
 
-**Feature (#13)** : Like / Unlike
+**FE Feature (#13)** : Like / Unlike
 
 - Only signed in user can use this feature. The icon will be muted for them and an overlay will show them a message.
 - Post's owner cannot like their own posts. The icon will be muted for owner and an overlay will show them a message.
@@ -262,7 +318,7 @@ To unlock additional features such as liking/unliking posts and submitting revie
 
 ![Recommend Toggle](documentation/supporting_images/like/like_others_toggle.png)
 
-**Feature (#14)** : Recommend / Un-recommend
+**FE Feature (#14)** : Recommend / Un-recommend
 
 - Only signed in user can use this feature. The icon will be muted for them and an overlay will show them a message.
 - Post's owner cannot recommend their own posts. The icon will be muted for owner and an overlay will show them a message.
@@ -273,14 +329,14 @@ To unlock additional features such as liking/unliking posts and submitting revie
 
 ![Recommend Toggle](documentation/supporting_images/recommend/recommend_other_toggle.png)
 
-**Feature (#15)** : Posts Detail page
+**FE Feature (#15)** : Posts Detail page
 
 - Post Detail page displays only one post depending on which posts the user clicked on.
 - The Post Detail page only consists of the post component, comment component and the popular profile component.
 
 ![Post Detail page](documentation/supporting_images/post/post_detail.png)
 
-**Feature (#16)** : Post Edit
+**FE Feature (#16)** : Post Edit
 
 - Only owner of the post can edit their post.
 - The post owner can edit a post by clicking the caret drop down menu from the side of the post and select the pencil icon.
@@ -292,7 +348,7 @@ To unlock additional features such as liking/unliking posts and submitting revie
 ![Post dropdown](documentation/supporting_images/post/post_dropdown.png)
 ![Post edit](documentation/supporting_images/post/post_edit.png)
 
-**Feature (#17)** : Post Delete
+**FE Feature (#17)** : Post Delete
 
 - Only owner of the post can delete their post.
 - The post owner can delete a post by clicking the caret drop down menu from the side of the post and select the bin icon.
@@ -300,7 +356,7 @@ To unlock additional features such as liking/unliking posts and submitting revie
 
 ![Post delete alert](documentation/supporting_images/post/post_delete_alert.png)
 
-**Feature (#18)** : Comment
+**FE Feature (#18)** : Comment
 
 - Any user can click the comment icon and it will take them to the post detail page
 - Only signed in user can use this feature. The form will not be displayed to un-signed in user.
@@ -314,7 +370,7 @@ To unlock additional features such as liking/unliking posts and submitting revie
 
 ![Comment Time](documentation/supporting_images/comment/comment_time.png)
 
-**Feature (#19)** : Comment Edit
+**FE Feature (#19)** : Comment Edit
 
 - Only owner of the comment can edit their comment.
 - The comment owner can edit a comment by clicking the claret drop down menu from the side of the comment and select the pencil icon.
@@ -323,7 +379,7 @@ To unlock additional features such as liking/unliking posts and submitting revie
 ![Comment edit](documentation/supporting_images/comment/comment_edit.png)
 ![Comment edit form](documentation/supporting_images/comment/comment_edit_form.png)
 
-**Feature (#20)** : Comment Delete
+**FE Feature (#20)** : Comment Delete
 
 - Only owner of the comment can delete their comment.
 - The comment owner can delete a comment by clicking the caret drop down menu from the side of the comment and select the bin icon.
@@ -331,7 +387,7 @@ To unlock additional features such as liking/unliking posts and submitting revie
 
 ![Comment delete](documentation/supporting_images/comment/comment_delete.png)
 
-**Feature (#21)** : Follow / Unfollow
+**FE Feature (#21)** : Follow / Unfollow
 
 - Only signed in user can use this feature.
 - The user can follow or unfollow a profile if they wish to by clicking the follow/unfollow button.
@@ -344,25 +400,25 @@ To unlock additional features such as liking/unliking posts and submitting revie
 
 ![Follow profile page](documentation/supporting_images/follow/follow_profile_mobile.png)
 
-**Feature (#22)** : Feed view
+**FE Feature (#22)** : Feed view
 
 - Only signed in user can use this feature.
 - The feed view features posts from the profiles that the user has followed.
 - The user can use the search bar to further filter the posts
 
-**Feature (#23)** : Liked view
+**FE Feature (#23)** : Liked view
 
 - Only signed in user can use this feature.
 - The feed view features posts that the user has liked.
 - The user can use the search bar to further filter the posts
 
-**Feature (#24)** : Recommended View
+**FE Feature (#24)** : Recommended View
 
 - Only signed in user can use this feature.
 - The feed view features posts that the user has recommended.
 - The user can use the search bar to further filter the posts
 
-**Feature (#25)** : Profile View
+**FE Feature (#25)** : Profile View
 
 - The user can access another user's profile view by clicking on the profile image/profile name from a post.
 - The user can also access it from the popular profile panel.
@@ -375,13 +431,13 @@ To unlock additional features such as liking/unliking posts and submitting revie
 
 ![Profile Dropdown](documentation/supporting_images/profile/profile_dropdown.png)
 
-**Feature (#26)** : Profile Edit
+**FE Feature (#26)** : Profile Edit
 
 - The owner of the profile can add a profile image and a short bio about themselves.
 
 ![Profile Edit](documentation/supporting_images/profile/profile_edit.png)
 
-**Feature (#27)** : Profile Username Change
+**FE Feature (#27)** : Profile Username Change
 
 - The owner of the profile can also change their username if they wishes.
 - Validation are set in place to check if the username is valid. Error message will be displayed.
@@ -390,7 +446,7 @@ To unlock additional features such as liking/unliking posts and submitting revie
 
 ![Profile Username error](documentation/supporting_images/profile/profile_username_error.png)
 
-**Feature (#28)** : Profile Password Change
+**FE Feature (#28)** : Profile Password Change
 
 - The owner of the profile can also change their password if they wishes.
 - Validation are set in place to check if the password is valid. Error message will be displayed.
@@ -404,4 +460,4 @@ To unlock additional features such as liking/unliking posts and submitting revie
 
 ### How these features support the user stories
 
-* The user stories are numbered from 1 to 38. The features are also numbered from 1 to 28. Below is the cross-reference between the user stories and features, to illustrate that the features satisfies the user stories.
+- The user stories are numbered from 1 to 38. The features are also numbered from 1 to 28. Below is the cross-reference between the user stories and features, to illustrate that the features satisfies the user stories.
