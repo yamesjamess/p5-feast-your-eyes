@@ -4,7 +4,7 @@ import styles from "../styles/DropDownOptions.module.css";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 // Custom caret component for the Dropdown.Toggle
-const Caret = React.forwardRef(({ onClick }, ref) => (
+export const Caret = React.forwardRef(({ onClick }, ref) => (
   <i
     className="fa-solid fa-angle-down"
     ref={ref}
