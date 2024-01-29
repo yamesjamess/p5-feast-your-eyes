@@ -461,3 +461,20 @@ To unlock additional features such as liking/unliking posts and submitting revie
 ### How these features support the user stories
 
 - The user stories are numbered from 1 to 38. The features are also numbered from 1 to 28. Below is the cross-reference between the user stories and features, to illustrate that the features satisfies the user stories.
+
+![User Story and Feature Cross Reference](#)
+
+### Feature that could be implemented in the future
+
+- Allow admin/superuser to perform edit/delete post/profile from front end.
+  - Currently only owner of the post/profile can edit/delete from the front end.
+  - Admin/superuser have to use admin panel.
+
+- Add dropdown for posts in profile view.
+  - Currently from the profile view does not allow owner user to edit/delete their post.
+
+- Add emoji reactions.
+  - To provide user with a more fun experience, they can use emojis to express their opinion without having to add comment.
+
+- Google map integration.
+  - Integrate Google map's API to display where the restaurant is.
