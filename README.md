@@ -1,4 +1,4 @@
-<h1 align="center"><img src="src/assets/logo.png" height="45" widht="45" style="margin-bottom: -15px;"> Feast Your Eyes</h1>
+<h1 align="center"><img src="src/assets/logo.png" height="45" style="margin-bottom: -15px;"> Feast Your Eyes</h1>
 
 [View the live project here](https://p5-feast-your-eyes-d27a109d8aa0.herokuapp.com/)
 
@@ -488,8 +488,16 @@ To unlock additional features such as liking/unliking posts and submitting revie
 
 **Balsamiq** - The wireframe for the website have been designed using Balsamiq. The wireframe only represents the initial design concept and does not reflect the finishing product.
 
+**Coolors** - The colour scheme was selected with the help of Coolors. The main colour is the Olivine green. Eerie black and this particular shade of Platinum has a green tinted version of black and white. Mustard colour was selected to be the colour for the star icon, and is selected due to the colour and the name to keep in theme with the food website.
+
+![Coolors](documentation/supporting_images/coolors.png)
+
+**Logo** - The website's logo is an egg. The thought process behind this comes from when the website got it's name "Feast Your Eyes". I wanted the logo to be an illustration of some type of food, then I thought an egg kind of looks like an eye and try to find an illustration of an egg that also kind of look like an eye.
+
+<img src="src/assets/logo.png" height="100">
+
 <details>
-<summary>Wireframes</summary>
+<summary><span style="font-weight: bold;">Wireframes</span></summary>
 
 - Home
   ![Wireframe - Home](documentation/supporting_images/wireframe/wireframe_home.png)
@@ -518,21 +526,60 @@ To unlock additional features such as liking/unliking posts and submitting revie
  </details>
 
 ### Entity-Relationship for the Database
-  * The ER model is created on **Lucidchart**
-  - Profile
-    - The Profile model has a 1 to 1 relationship with User model. Because of the signal in the Profile model. A User object is created when Profile is created.
-    - The Profile Model has a one to many relationship with Follower, as one profile can follow many profiles.
-  - User
-    - The User model has a one to many relationship with Follower, as one profile can have many followers.
-    - The User model has a one to many relationship with Like, as one profile can have many likes.
-    - The User model has a one to many relationship with Recommend, as one profile can have many recommendations.
-    - The User model has a one to many relationship with Comment, as one profile can have many comments.
-    - The User model has a one to many relationship with Post, as one profile can have many posts.
-  - Post
-    - The Post model has a many to one relationship with Likes, as one post can have many likes.
-    - The Post model has a many to one relationship with Recommend, as one post can have many recommendations.
-    - The Post model has a many to one relationship with Comment, as one post can have many comments.
 
-  ![ER Model](documentation/supporting_images/er-diagram.png)
+- The ER model is created on **Lucidchart**
 
-  
+* Profile
+  - The Profile model has a 1 to 1 relationship with User model. Because of the signal in the Profile model. A User object is created when Profile is created.
+  - The Profile Model has a one to many relationship with Follower, as one profile can follow many profiles.
+* User
+  - The User model has a one to many relationship with Follower, as one profile can have many followers.
+  - The User model has a one to many relationship with Like, as one profile can have many likes.
+  - The User model has a one to many relationship with Recommend, as one profile can have many recommendations.
+  - The User model has a one to many relationship with Comment, as one profile can have many comments.
+  - The User model has a one to many relationship with Post, as one profile can have many posts.
+* Post
+  - The Post model has a many to one relationship with Likes, as one post can have many likes.
+  - The Post model has a many to one relationship with Recommend, as one post can have many recommendations.
+  - The Post model has a many to one relationship with Comment, as one post can have many comments.
+
+![ER Model](documentation/supporting_images/er-diagram.png)
+
+## Planning
+
+- The Github Project and Issues was utilise to facilitate the Agile Development Methodology. User Stories were created from User Stories template with acceptance criteria. The development process was aided by Kanban board feature of the Project to visualise what needs to be worked on and what is completed. All the User Stories are linked to EPICs to show how to support each other and what must be achieved to complete development goals.
+
+The EPICs, User Stories, and Kanban Board can be viewd here : [Feast Your Eyes Agile Development Tool](https://github.com/users/yamesjamess/projects/8)
+
+### Languages Used
+
+*   [HTML5](https://en.wikipedia.org/wiki/HTML5)
+*   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+*   [JSX](https://en.wikipedia.org/wiki/JSX_(JavaScript))
+*   [Python](https://www.python.org/)
+
+### Frameworks, Libraries & Programs Used
+
+* [Lucidchart](https://www.lucidchart.com/pages/): Used to create a ER Diagram during the design and planning stage. Outline what model is needed and how to related to each other.
+* [Google Fonts:](https://fonts.google.com/): Used for Quicksand font.
+* [Font Awesome:](https://fontawesome.com/) : Used to add icons for aesthetic and UX purposes.
+* [Balsamiq:](https://balsamiq.com/): Used to create the wireframes during the design process.
+* [Django](https://www.djangoproject.com/): Used as the framework to support rapid and secure development of the application.
+* [Django REST Framework](https://www.django-rest-framework.org/): Used as the framework to create the backend API
+* [React Bootstrap](https://react-bootstrap.netlify.app/): Used to build quick responsive web pages.
+* [Gunicorn](https://gunicorn.org/): Used as the Web Server to run Django on Heroku.
+* [dj_database_url](https://pypi.org/project/dj-database-url/): Library used to allow database urls to connect to the postgres db.
+* [psycopg2](https://pypi.org/project/psycopg2/): Database adapter used to support the connection to the postgres db.
+* [ElephantSQL](https://www.elephantsql.com/): Used to host the database.
+* [Cloudinary](https://cloudinary.com/): Used to store the images used by the application.
+* [Django allauth](https://django-allauth.readthedocs.io/en/latest/index.html): Used for account registration and authentication.
+* [Django testing tools](https://docs.djangoproject.com/en/3.2/topics/testing/tools/): Used for Django python MVT testing.
+* [coverage](https://coverage.readthedocs.io/en/coverage-5.5/): Used to check how much of the python code has been covered by 
+automated tests.
+* [Pillow](https://pillow.readthedocs.io/en/stable/): Used for processing images.
+* [Git](https://git-scm.com/): Used for version controlling purposes through git commands via the terminal on GitPod and is pushed to GitHub for cloud-based storage.
+* [GitHub](https://github.com/): Used to host the repository of the project.
+* [Heroku](https://heroku.com): Used to host and deploy the website.
+* [favicon.io](https://favicon.io/): Used to create favicon.
+* [Tint & Shade Generator](https://maketintsandshades.com/): Used to create different shade of the theme colours.
+* [coolors](https://coolors.co/): Used to generate theme colours for the website.
