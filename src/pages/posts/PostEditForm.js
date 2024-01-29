@@ -212,7 +212,7 @@ function PostEditForm() {
                   className={`${btnStyles.Button} ${btnStyles.Light} btn`}
                   htmlFor="image-upload"
                 >
-                  Change the image
+                  change the image
                 </Form.Label>
               </div>
 

@@ -189,7 +189,7 @@ const Post = (props) => {
           ) : (
             <OverlayTrigger
               placement="top"
-              overlay={<Tooltip>log in to like this post!</Tooltip>}
+              overlay={<Tooltip>sign in to like this post!</Tooltip>}
             >
               <i className="fa-regular fa-heart" />
             </OverlayTrigger>
@@ -214,7 +214,7 @@ const Post = (props) => {
           ) : (
             <OverlayTrigger
               placement="top"
-              overlay={<Tooltip>log in to recommend this post!</Tooltip>}
+              overlay={<Tooltip>sign in to recommend this post!</Tooltip>}
             >
               <i className="fa-regular fa-star" />
             </OverlayTrigger>

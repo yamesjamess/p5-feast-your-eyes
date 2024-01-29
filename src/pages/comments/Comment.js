@@ -33,7 +33,7 @@ const Comment = (props) => {
   // Event handler to delete a comment
   const handleDelete = async () => {
     const confirmDelete = window.confirm(
-      "Are you sure you want to delete this post?"
+      "Are you sure you want to delete this comment?"
     );
     if (confirmDelete) {
       try {
