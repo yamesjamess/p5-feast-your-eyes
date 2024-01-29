@@ -59,6 +59,8 @@ const TagPostList = ({message}) => {
         
         <TopRecommend message={message} />
 
+        <h5 className="mb-3">Filter by tag: {tag}</h5>
+
         {hasLoaded ? (
           <>
             {posts.results.length ? (
