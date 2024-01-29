@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "../styles/Avatar.module.css";
 
 // Avatar component that displays an image (avatar) and optional text

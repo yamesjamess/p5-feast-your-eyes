@@ -15,6 +15,8 @@ export const Caret = React.forwardRef(({ onClick }, ref) => (
   />
 ));
 
+Caret.displayName = "Caret";
+
 // DropDownOptions component for generic dropdown options like edit and delete
 export const DropDownOptions = ({ handleEdit, handleDelete }) => {
   return (
