@@ -41,11 +41,19 @@ const Tags = () => {
       <Container className={`${appStyles.Content} ${styles.TagContainer}`}>
         <p className={styles.Header}>filter by tags</p>
         <hr />
-        <ul>
-          {uniqueTags.map((tag, index) => (
-            <li key={index}><Link to={`/posts/tag/${tag}`} className={styles.Tags}>{tag}</Link></li>
-          ))}
-        </ul>
+        {uniqueTags.length ? (
+          <ul>
+            {uniqueTags.map((tag, index) => (
+              <li key={index}>
+                <Link to={`/posts/tag/${tag}`} className={styles.Tags}>
+                  {tag}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>no tags available</p>
+        )}
       </Container>
     </>
   );
