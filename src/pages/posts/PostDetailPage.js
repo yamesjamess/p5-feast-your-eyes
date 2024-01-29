@@ -56,8 +56,8 @@ function PostDetailPage() {
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile />
         <Post {...post.results[0]} setPosts={setPost} postPage />
-        <Container className={appStyles.Content}>
-          {currentUser ? (
+        {currentUser ? (
+          <Container className={appStyles.Content}>
             <CommentCreateForm
               profile_id={currentUser.profile_id}
               profileImage={profile_image}
@@ -65,10 +65,11 @@ function PostDetailPage() {
               setPost={setPost}
               setComments={setComments}
             />
-          ) : comments.results.length ? (
-            "Comments"
-          ) : null}
-        </Container>
+          </Container>
+        ) : comments.results.length ? (
+          "Comments"
+        ) : null}
+
         <Container
           className={`${appStyles.CommentContent} ${appStyles.Content}`}
         >
