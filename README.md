@@ -32,7 +32,33 @@ To unlock additional features such as liking/unliking posts and submitting revie
 
   - As a developer I can list up all the requirements so that set up my project and start the development accordingly.
 
-- **Note**: USER STORY (#2 - #8) can be found in the [API Documentation](https://github.com/yamesjamess/p5-feast-your-eyes-drf-api)
+- **USER STORY (#2)** : Project Setup
+
+  - As a developer I can use all the info from the requirement to set up a repo so that I can start develop to API model and the front end.
+
+- **USER STORY (#3)** : Profiles Model
+
+  - As a admin I can login to the admin panel so that I can manage user profiles.
+
+- **USER STORY (#4)** : Posts Model
+
+  - As a superuser I can manage Posts so that I can create, update, delete and view the details of the posts I wish to display.
+
+- **USER STORY (#5)** : Likes Model
+
+  - As a superuser I can manage the Likes so that I can create, update, delete and view the likes of the posts I wish to display.
+
+- **USER STORY (#6)** : Comments Model
+
+  - As a superuser I can manage Comments so that I can create, update, delete and view the details of the comments I wish to display
+
+- **USER STORY (#7)** : Recommended Model
+
+  - As a superuser I can manage the Recommendations so that I can create, update, delete and view the recommendations of the posts I wish to display.
+
+- **USER STORY (#8)** : Followers Model
+
+  - As a superuser I can manage the Followers so that I can create, update, delete and view the followers I wish to display.
 
 - **USER STORY (#9)** : Create Landing Page & Navigation
   - As a website user I can visit the website and see the landing page and navigation so that I can navigate the website to use it's functionality.
@@ -96,3 +122,286 @@ To unlock additional features such as liking/unliking posts and submitting revie
 - **USER STORY (#38)** : Documentation
   - As a developer I can write a comprehensive documentation so that other developer can read the README.md and understand my project.
 
+## Features
+
+### Existing Back End Features
+
+### Existing Front End Features
+
+**Feature (#1)** : React
+
+- The website is created using React to render the user interface (UI).
+- The data is accessed through a Django Rest Framework API.
+- Using React gives the user a seamless expreience when using the website since there are no loading screens between each page visit.
+- All the components are independently refreshed based on their dependencies in the useEffect hook.
+
+**Feature (#2)** : Navigation bar
+
+- The navigation bar's design and placement is consistent on every page.
+- The navigation bar features the brand's Logo and Home links
+- If the user is **not signed in**, the user can see links that take them to the Register and sign in page.
+- If the user is **signed in**, the user can see the add post, home, feed, liked, recommended, logout, user avatar, and username.
+- The navigation bar is fully responsive on multiple screen sizes. On smaller screens, the links collapse into a "Hamburger" style menu
+
+![Navbar Full](documentation/supporting_images/navbar/nav_not_logged_in.png)
+
+![Navbar Full Signed In](documentation/supporting_images/navbar/nav_logged_in.png)
+
+![Navbar Small](documentation/supporting_images/navbar/nar_hamburger.png)
+
+**Feature (#3)** : Home Page
+
+- The home page is also known as the posts list page, is a page where all the posts that has been created are displayed to the user.
+- The home page features the search bar, top 5 recommended posts, most followed profile list, filter by tags lists, and lists of posts.
+
+![Home Page](documentation/supporting_images/fye_home.png)
+
+**Feature (#4)** : User Registration
+
+- To fully utilise the website's function the user need to be signed in.
+- The user can create an account by visiting the Registration page.
+- Error messages are display if the form is invalid.
+- The user will be redirected to the sign in page when submitted a valid form.
+
+![Register](documentation/supporting_images/fye_register.png)
+
+![Register error](documentation/supporting_images/fye_register_error.png)
+
+**Feature (#5)** : Rules/Guidelines Modal
+
+- To ensure that the user are aware of the Rules/Guidelines for using the website before they create an account, the rules link is place right before the user submits the form.
+- The Rules/Guidelines modal are also placed within PostCreateForm and PostEditForm to remind the user.
+
+![Rules modal](documentation/supporting_images/fye_rules_modal.png)
+
+**Feature (#6)** : User Sign in
+
+- To fully utilise the website's function the user need to be signed in.
+- The user can enter their credentials and sign in to the system.
+- Error messages are display if the form is invalid.
+- The user will be redirected to the Home page after successfully signing in.
+
+![Sign in](documentation/supporting_images/fye_sign_in.png)
+
+![Sign in error](documentation/supporting_images/fye_sign_in_error.png)
+
+**Feature (#7)** : Add Post
+
+- Only signed in user can use this feature.
+- The user can click the button the appear instead of the Feast Your Eye text icon to create a post.
+- They can then add an image and fill out the form fields.
+- They can then create the post by clicking create.
+- If the form is invalid, errors will be shown.
+- If the image is not added, placeholder image will be uploaded in its place.
+
+![Add post](documentation/supporting_images/post/post_add.png)
+![Add post error](documentation/supporting_images/post/post_add_error.png)
+
+**Feature (#8)** : Search bar
+
+- The search bar is featured on the top of the home page. It is also available on the Feed, Liked, and Recommended page.
+- The user doesn't require to sign in to use the search bar, however the search function on Feed, Liked, and Recommended page won't be available since those pages are only available after signing in.
+- The search bar accepts any written query, and will search through the all the posts fields (restaurant, menu, content, and tags).
+- The results will then be displayed after a brief moment. A spinner is display to show the user that the result is loading.
+- If no reulsts found, it will display the no result icon accordingly.
+
+![Search bar](documentation/supporting_images/post/post_search.png)
+
+![Search result](documentation/supporting_images/post/post_search_result.png)
+
+![Search no result](documentation/supporting_images/post/post_search_no_result.png)
+
+![Search spinner](documentation/supporting_images/post/post_search_spinner.png)
+
+**Feature (#9)** : Top 5 Recommended
+
+- The Top 5 Recommended display 5 posts with the most recommendation counts.
+- It only displays the image, menu, recommendation counts and star icon to limit overloading user with information and cluttering.
+- The user can click on the image to visit the Post's detail page.
+
+![Top Recommended](documentation/supporting_images/recommend/recommend_top.png)
+
+**Feature (#10)** : Popular Profile
+
+- On the right handside of the screen, the users can see which profile has the most followers
+- Only signed in user can see the follow/unfollow button.
+- The signed in user can use the button to follow/unfollow a profile.
+- The button is not available on mobile deviced, the user must go to their profile page to follow/unfollow a profile.
+- There's a limit of 20 profiles displayed on desktop and 4 on mobile.
+
+![Popular profiles desktop](documentation/supporting_images/follow/popular_desktop.png)
+
+![Popular profiles mobile](documentation/supporting_images/follow/popular_mobile.png)
+
+**Feature (#11)** : Posts List
+
+- Underneath the Top 5 Recommended container, the user can find the Posts list.
+- The Posts list displays all the post and their details (restaurant, menu, content, tag, like button, like count, recommend button, recommend count, comment button, comment count) from all users.
+- The Posts list featured Infinity scroll when there are more than 10 posts.
+
+![Posts List](documentation/supporting_images/post/post_list.png)
+
+**Feature (#12)** : Filter by tags
+
+- Underneath the Popular Profiles, the user can find the filter by tags links
+- When the use clicks the tag link, it will display the user all the posts with that tag.
+- This feature is not availble for mobile users, however they can achieve a similar result by using the search bar.
+
+![Tags](documentation/supporting_images/tag/tag_filter.png)
+
+![Tag filter view](documentation/supporting_images/tag/tag_filter_view.png)
+
+**Feature (#13)** : Like / Unlike
+
+- Only signed in user can use this feature. The icon will be muted for them and an overlay will show them a message.
+- Post's owner cannot like their own posts. The icon will be muted for owner and an overlay will show them a message.
+- Other users can like by clicking the heart outline, it will turn solid and the count will increase by 1.
+- To unlike, simply click the solid heart and it will turn to an outline
+
+![Recommend Own](documentation/supporting_images/like/like_own.png)
+
+![Recommend Toggle](documentation/supporting_images/like/like_others_toggle.png)
+
+**Feature (#14)** : Recommend / Un-recommend
+
+- Only signed in user can use this feature. The icon will be muted for them and an overlay will show them a message.
+- Post's owner cannot recommend their own posts. The icon will be muted for owner and an overlay will show them a message.
+- Other users can recommend by clicking the star outline, it will turn solid and the count will increase by 1.
+- To un-recommend, simply click the solid star and it will turn to an outline
+
+![Recommend Own](documentation/supporting_images/recommend/recommend_own.png)
+
+![Recommend Toggle](documentation/supporting_images/recommend/recommend_other_toggle.png)
+
+**Feature (#15)** : Posts Detail page
+
+- Post Detail page displays only one post depending on which posts the user clicked on.
+- The Post Detail page only consists of the post component, comment component and the popular profile component.
+
+![Post Detail page](documentation/supporting_images/post/post_detail.png)
+
+**Feature (#16)** : Post Edit
+
+- Only owner of the post can edit their post.
+- The post owner can edit a post by clicking the caret drop down menu from the side of the post and select the pencil icon.
+- The user will be taken to a post edit form that has all the post information prepopulated.
+- The user can then change the image or edit any of the form input as they like.
+- The user can then submit their edit by clicking the save edit button.
+- The posting guidelines are also listed here.
+
+![Post dropdown](documentation/supporting_images/post/post_dropdown.png)
+![Post edit](documentation/supporting_images/post/post_edit.png)
+
+**Feature (#17)** : Post Delete
+
+- Only owner of the post can delete their post.
+- The post owner can delete a post by clicking the caret drop down menu from the side of the post and select the bin icon.
+- The user will be promt with an alert window to confirm their action.
+
+![Post delete alert](documentation/supporting_images/post/post_delete_alert.png)
+
+**Feature (#18)** : Comment
+
+- Any user can click the comment icon and it will take them to the post detail page
+- Only signed in user can use this feature. The form will not be displayed to un-signed in user.
+- Signed in user can submit a comment using the form.
+- The comment section featured Infinity scroll when there are more than 10 comments.
+- The comment time is shown in how long time has passed since the user left that comment or edited that comment.
+
+![Comment Not Signed in](documentation/supporting_images/comment/comment_not_sign_in.png)
+
+![No Comments](documentation/supporting_images/comment/comment_no_comments.png)
+
+![Comment Time](documentation/supporting_images/comment/comment_time.png)
+
+**Feature (#19)** : Comment Edit
+
+- Only owner of the comment can edit their comment.
+- The comment owner can edit a comment by clicking the claret drop down menu from the side of the comment and select the pencil icon.
+- The comment form will appear and the user can now edit their comment.
+
+![Comment edit](documentation/supporting_images/comment/comment_edit.png)
+![Comment edit form](documentation/supporting_images/comment/comment_edit_form.png)
+
+**Feature (#20)** : Comment Delete
+
+- Only owner of the comment can delete their comment.
+- The comment owner can delete a comment by clicking the caret drop down menu from the side of the comment and select the bin icon.
+- The user will be promt with an alert window to confirm their action.
+
+![Comment delete](documentation/supporting_images/comment/comment_delete.png)
+
+**Feature (#21)** : Follow / Unfollow
+
+- Only signed in user can use this feature.
+- The user can follow or unfollow a profile if they wish to by clicking the follow/unfollow button.
+- If the profile they are trying to follow/unfollow is popular, the can simply follow/unfollow them by clicking on the follow/unfollow button from the popular profile panel.
+- If the profile is not listed on the popular profile panel, the user can find the follow/unfollow on the profile page of that user.
+
+![Follow popular profiles](documentation/supporting_images/follow/follow_popular.png)
+
+![Unfollow popular profiles](documentation/supporting_images/follow/follow_unfollow.png)
+
+![Follow profile page](documentation/supporting_images/follow/follow_profile_mobile.png)
+
+**Feature (#22)** : Feed view
+
+- Only signed in user can use this feature.
+- The feed view features posts from the profiles that the user has followed.
+- The user can use the search bar to further filter the posts
+
+**Feature (#23)** : Liked view
+
+- Only signed in user can use this feature.
+- The feed view features posts that the user has liked.
+- The user can use the search bar to further filter the posts
+
+**Feature (#24)** : Recommended View
+
+- Only signed in user can use this feature.
+- The feed view features posts that the user has recommended.
+- The user can use the search bar to further filter the posts
+
+**Feature (#25)** : Profile View
+
+- The user can access another user's profile view by clicking on the profile image/profile name from a post.
+- The user can also access it from the popular profile panel.
+- Signed in user can access their own profile by using the 2 methods above, or clicking on their profile image/profile name from the NavBar.
+- The profile view displays the user's username, image, posts count, followers count, following count, bio, and all the posts they've created.
+- The profile view posts section also featured Infinity scroll.
+- The owner of the profile can access the dropdown options by clicking the caret that appear where the follow/unfollow button usually is.
+
+![Profile View](documentation/supporting_images/profile/profile_view.png)
+
+![Profile Dropdown](documentation/supporting_images/profile/profile_dropdown.png)
+
+**Feature (#26)** : Profile Edit
+
+- The owner of the profile can add a profile image and a short bio about themselves.
+
+![Profile Edit](documentation/supporting_images/profile/profile_edit.png)
+
+**Feature (#27)** : Profile Username Change
+
+- The owner of the profile can also change their username if they wishes.
+- Validation are set in place to check if the username is valid. Error message will be displayed.
+
+![Profile Username change](documentation/supporting_images/profile/profile_username.png)
+
+![Profile Username error](documentation/supporting_images/profile/profile_username_error.png)
+
+**Feature (#28)** : Profile Password Change
+
+- The owner of the profile can also change their password if they wishes.
+- Validation are set in place to check if the password is valid. Error message will be displayed.
+- An alert window will pop up to confirm the password change.
+
+![Profile Password Change](documentation/supporting_images/profile/profile_password.png)
+
+![Profile Password Change error](documentation/supporting_images/profile/profile_password_error.png)
+
+![Profile Password Change alert](documentation/supporting_images/profile/profile_password_alert.png)
+
+### How these features support the user stories
+
+* The user stories are numbered from 1 to 38. The features are also numbered from 1 to 28. Below is the cross-reference between the user stories and features, to illustrate that the features satisfies the user stories.
