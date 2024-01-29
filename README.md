@@ -459,10 +459,11 @@ To unlock additional features such as liking/unliking posts and submitting revie
 ![Profile Password Change alert](documentation/supporting_images/profile/profile_password_alert.png)
 
 ### How these features support the user stories
-
+<!-- reminder -->
 - The user stories are numbered from 1 to 38. The features are also numbered from 1 to 28. Below is the cross-reference between the user stories and features, to illustrate that the features satisfies the user stories.
+<!-- reminder -->
 
-![User Story and Feature Cross Reference](#)
+![User Story and Feature Cross Reference](#) <!-- reminder -->
 
 ### Feature that could be implemented in the future
 
@@ -553,33 +554,420 @@ The EPICs, User Stories, and Kanban Board can be viewd here : [Feast Your Eyes A
 
 ### Languages Used
 
-*   [HTML5](https://en.wikipedia.org/wiki/HTML5)
-*   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
-*   [JSX](https://en.wikipedia.org/wiki/JSX_(JavaScript))
-*   [Python](https://www.python.org/)
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+- [JSX](<https://en.wikipedia.org/wiki/JSX_(JavaScript)>)
+- [Python](https://www.python.org/)
 
 ### Frameworks, Libraries & Programs Used
 
-* [Lucidchart](https://www.lucidchart.com/pages/): Used to create a ER Diagram during the design and planning stage. Outline what model is needed and how to related to each other.
-* [Google Fonts:](https://fonts.google.com/): Used for Quicksand font.
-* [Font Awesome:](https://fontawesome.com/) : Used to add icons for aesthetic and UX purposes.
-* [Balsamiq:](https://balsamiq.com/): Used to create the wireframes during the design process.
-* [Django](https://www.djangoproject.com/): Used as the framework to support rapid and secure development of the application.
-* [Django REST Framework](https://www.django-rest-framework.org/): Used as the framework to create the backend API
-* [React Bootstrap](https://react-bootstrap.netlify.app/): Used to build quick responsive web pages.
-* [Gunicorn](https://gunicorn.org/): Used as the Web Server to run Django on Heroku.
-* [dj_database_url](https://pypi.org/project/dj-database-url/): Library used to allow database urls to connect to the postgres db.
-* [psycopg2](https://pypi.org/project/psycopg2/): Database adapter used to support the connection to the postgres db.
-* [ElephantSQL](https://www.elephantsql.com/): Used to host the database.
-* [Cloudinary](https://cloudinary.com/): Used to store the images used by the application.
-* [Django allauth](https://django-allauth.readthedocs.io/en/latest/index.html): Used for account registration and authentication.
-* [Django testing tools](https://docs.djangoproject.com/en/3.2/topics/testing/tools/): Used for Django python MVT testing.
-* [coverage](https://coverage.readthedocs.io/en/coverage-5.5/): Used to check how much of the python code has been covered by 
-automated tests.
-* [Pillow](https://pillow.readthedocs.io/en/stable/): Used for processing images.
-* [Git](https://git-scm.com/): Used for version controlling purposes through git commands via the terminal on GitPod and is pushed to GitHub for cloud-based storage.
-* [GitHub](https://github.com/): Used to host the repository of the project.
-* [Heroku](https://heroku.com): Used to host and deploy the website.
-* [favicon.io](https://favicon.io/): Used to create favicon.
-* [Tint & Shade Generator](https://maketintsandshades.com/): Used to create different shade of the theme colours.
-* [coolors](https://coolors.co/): Used to generate theme colours for the website.
+- [Lucidchart](https://www.lucidchart.com/pages/): Used to create a ER Diagram during the design and planning stage. Outline what model is needed and how to related to each other.
+- [Google Fonts:](https://fonts.google.com/): Used for Quicksand font.
+- [Font Awesome:](https://fontawesome.com/) : Used to add icons for aesthetic and UX purposes.
+- [Balsamiq:](https://balsamiq.com/): Used to create the wireframes during the design process.
+- [Django](https://www.djangoproject.com/): Used as the framework to support rapid and secure development of the application.
+- [Django REST Framework](https://www.django-rest-framework.org/): Used as the framework to create the backend API
+- [React Bootstrap](https://react-bootstrap.netlify.app/): Used to build quick responsive web pages.
+- [Gunicorn](https://gunicorn.org/): Used as the Web Server to run Django on Heroku.
+- [dj_database_url](https://pypi.org/project/dj-database-url/): Library used to allow database urls to connect to the postgres db.
+- [psycopg2](https://pypi.org/project/psycopg2/): Database adapter used to support the connection to the postgres db.
+- [ElephantSQL](https://www.elephantsql.com/): Used to host the database.
+- [Cloudinary](https://cloudinary.com/): Used to store the images used by the application.
+- [Django allauth](https://django-allauth.readthedocs.io/en/latest/index.html): Used for account registration and authentication.
+- [Django testing tools](https://docs.djangoproject.com/en/3.2/topics/testing/tools/): Used for Django python MVT testing.
+- [coverage](https://coverage.readthedocs.io/en/coverage-5.5/): Used to check how much of the python code has been covered by automated tests.
+- [Pillow](https://pillow.readthedocs.io/en/stable/): Used for processing images.
+- [Git](https://git-scm.com/): Used for version controlling purposes through git commands via the terminal on GitPod and is pushed to GitHub for cloud-based storage.
+- [GitHub](https://github.com/): Used to host the repository of the project.
+- [Heroku](https://heroku.com): Used to host and deploy the website.
+- [favicon.io](https://favicon.io/): Used to create favicon.
+- [Tint & Shade Generator](https://maketintsandshades.com/): Used to create different shade of the theme colours.
+- [coolors](https://coolors.co/): Used to generate theme colours for the website.
+
+## Testing
+
+### Validator Testing
+
+[HTML Validator](https://validator.w3.org/)
+
+<details><summary>HTML Validation results</summary>
+
+- **results for "/"**
+
+  !["/"](documentation/supporting_images/validator/html/html_validator_home.png)
+
+- **results for "/feed"**
+
+  !["/feed"](documentation/supporting_images/validator/html/html_validator_feed.png)
+
+- **results for "/register"**
+
+  !["/register"](documentation/supporting_images/validator/html/html_validator_register.png)
+
+- **results for "/signin"**
+
+  !["/signin"](documentation/supporting_images/validator/html/html_validator_signin.png)
+
+- **results for "/post/create"**
+
+  !["/post/create"](documentation/supporting_images/validator/html/html_validator_post_create.png)
+
+- **results for "/post/:id"**
+
+  !["/post/:id"](documentation/supporting_images/validator/html/html_validator_post.png)
+
+- **results for "/post/:id/edit"**
+
+  !["/post/:id/edit"](documentation/supporting_images/validator/html/html_validator_post_edit.png)
+
+- **results for "/profile/:id"**
+
+  !["/profile/:id"](documentation/supporting_images/validator/html/html_validator_profile.png)
+
+- **results for "/profile/:id/edit"**
+
+  !["/profile/:id/edit"](documentation/supporting_images/validator/html/html_validator_profile_edit.png)
+
+- **results for "/profile/:id/edit/username"**
+
+  !["/profile/:id/edit/username"](documentation/supporting_images/validator/html/html_validator_profile_edit_username.png)
+
+- **results for "/profile/:id/edit/password"**
+
+  !["/profile/:id/edit/password"](documentation/supporting_images/validator/html/html_validator_profile_edit_password.png)
+
+- **results for "/liked"**
+
+  !["/liked"](documentation/supporting_images/validator/html/html_validator_liked.png)
+
+- **results for "/recommended"**
+
+  !["/recommended"](documentation/supporting_images/validator/html/html_validator_recommended.png)
+
+</details>
+<br>
+
+[CSS Validator](https://jigsaw.w3.org/css-validator/)
+
+<details><summary>CSS Validation results</summary>
+
+- **results for "App.module.css"**
+
+  !["App.module.css"](documentation/supporting_images/validator/css/css_validator_app.png)
+
+- **results for "Asset.module.css"**
+
+  !["Asset.module.css"](documentation/supporting_images/validator/css/css_validator_asset.png)
+
+- **results for "Avatar.module.css"**
+
+  !["Avatar.module.css"](documentation/supporting_images/validator/css/css_validator_avatar.png)
+
+- **results for "Button.module.css"**
+
+  !["Button.module.css"](documentation/supporting_images/validator/css/css_validator_button.png)
+
+- **results for "CommentCreateEditForm.module.css"**
+
+  !["CommentCreateEditForm.module.css"](documentation/supporting_images/validator/css/css_validator_comment_create_edit_form.png)
+
+- **results for "Comment.module.css"**
+
+  !["Comment.module.css"](documentation/supporting_images/validator/css/css_validator_comment.png)
+
+- **results for "DropDownOptions.module.css"**
+
+  !["DropDownOptions.module.css"](documentation/supporting_images/validator/css/css_validator_drop_down_options.png)
+
+- **results for "Error.module.css"**
+
+  !["Error.module.css"](documentation/supporting_images/validator/css/css_validator_error.png)
+
+- **results for "Modal.module.css"**
+
+  !["Modal.module.css"](documentation/supporting_images/validator/css/css_validator_modal.png)
+
+- **results for "NavBar.module.css"**
+
+  !["NavBar.module.css"](documentation/supporting_images/validator/css/css_validator_navbar.png)
+
+- **results for "PostCreateEditForm.module.css"**
+
+  !["PostCreateEditForm.module.css"](documentation/supporting_images/validator/css/css_validator_post_create_edit_form.png)
+
+- **results for "PostListPage.module.css"**
+
+  !["PostListPage.module.css"](documentation/supporting_images/validator/css/css_validator_post_list_page.png)
+
+- **results for "Post.module.css"**
+
+  !["Post.module.css"](documentation/supporting_images/validator/css/css_validator_post.png)
+
+- **results for "ProfilePage.module.css"**
+
+  !["ProfilePage.module.css"](documentation/supporting_images/validator/css/css_validator_profile_page.png)
+
+- **results for "Profile.module.css"**
+
+  !["Profile.module.css"](documentation/supporting_images/validator/css/css_validator_profile.png)
+
+- **results for "RegisterSignInForm.module.css"**
+
+  !["RegisterSignInForm.module.css"](documentation/supporting_images/validator/css/css_validator_register_sign_in_form.png)
+
+- **results for "Tags.module.css"**
+
+  !["Tags.module.css"](documentation/supporting_images/validator/css/css_validator_tags.png)
+
+- **results for "TopRecommend.module.css"**
+
+  !["TopRecommend.module.css"](documentation/supporting_images/validator/css/css_validator_top_recommend.png)
+
+</details>
+<br>
+
+[CI Python Linter](https://pep8ci.herokuapp.com/)
+
+<details><summary>Python Validation results</summary>
+
+- **results for "comments/model.py"**
+
+  !["comments/model.py"](documentation/supporting_images/validator/python/ci_linter_comments_model.png)
+
+- **results for "comments/serializers.py"**
+
+  !["comments/serializers.py"](documentation/supporting_images/validator/python/ci_linter_comments_serializers.png)
+
+- **results for "comments/test_model.py"**
+
+  !["comments/test_model.py"](documentation/supporting_images/validator/python/ci_linter_comments_test_model.png)
+
+- **results for "comments/test_view.py"**
+
+  !["comments/test_view.py"](documentation/supporting_images/validator/python/ci_linter_comments_test_view.png)
+
+- **results for "comments/views.py"**
+
+  !["comments/views.py"](documentation/supporting_images/validator/python/ci_linter_comments_view.png)
+
+- **results for "followers/model.py"**
+
+  !["followers/model.py"](documentation/supporting_images/validator/python/ci_linter_follower_model.png)
+
+- **results for "followers/serializers.py"**
+
+  !["followers/serializers.py"](documentation/supporting_images/validator/python/ci_linter_follower_serializers.png)
+
+- **results for "followers/test_model.py"**
+
+  !["followers/test_model.py"](documentation/supporting_images/validator/python/ci_linter_follower_test_model.png)
+
+- **results for "followers/test_view.py"**
+
+  !["followers/test_view.py"](documentation/supporting_images/validator/python/ci_linter_follower_test_view.png)
+
+- **results for "followers/views.py"**
+
+  !["followers/views.py"](documentation/supporting_images/validator/python/ci_linter_follower_view.png)
+
+- **results for "likes/model.py"**
+
+  !["likes/model.py"](documentation/supporting_images/validator/python/ci_linter_likes_model.png)
+
+- **results for "likes/serializers.py"**
+
+  !["likes/serializers.py"](documentation/supporting_images/validator/python/ci_linter_likes_serializers.png)
+
+- **results for "likes/test_model.py"**
+
+  !["likes/test_model.py"](documentation/supporting_images/validator/python/ci_linter_likes_test_model.png)
+
+- **results for "likes/views.py"**
+
+  !["likes/views.py"](documentation/supporting_images/validator/python/ci_linter_likes_view.png)
+
+- **results for "posts/model.py"**
+
+  !["posts/model.py"](documentation/supporting_images/validator/python/ci_linter_posts_model.png)
+
+- **results for "posts/serializers.py"**
+
+  !["posts/serializers.py"](documentation/supporting_images/validator/python/ci_linter_posts_serializers.png)
+
+- **results for "posts/test_model.py"**
+
+  !["posts/test_model.py"](documentation/supporting_images/validator/python/ci_linter_posts_test_model.png)
+
+- **results for "posts/test_view.py"**
+
+  !["posts/test_view.py"](documentation/supporting_images/validator/python/ci_linter_posts_test_view.png)
+
+- **results for "posts/views.py"**
+
+  !["posts/views.py"](documentation/supporting_images/validator/python/ci_linter_posts_view.png)
+
+- **results for "profiles/model.py"**
+
+  !["profiles/model.py"](documentation/supporting_images/validator/python/ci_linter_profiles_model.png)
+
+- **results for "profiles/serializers.py"**
+
+  !["profiles/serializers.py"](documentation/supporting_images/validator/python/ci_linter_profiles_serializers.png)
+
+- **results for "profiles/test_model.py"**
+
+  !["profiles/test_model.py"](documentation/supporting_images/validator/python/ci_linter_profiles_test_model.png)
+
+- **results for "profiles/test_view.py"**
+
+  !["profiles/test_view.py"](documentation/supporting_images/validator/python/ci_linter_profiles_test_view.png)
+
+- **results for "profiles/views.py"**
+
+  !["profiles/views.py"](documentation/supporting_images/validator/python/ci_linter_profiles_view.png)
+
+- **results for "recommends/model.py"**
+
+  !["recommends/model.py"](documentation/supporting_images/validator/python/ci_linter_recommends_model.png)
+
+- **results for "recommends/serializers.py"**
+
+  !["recommends/serializers.py"](documentation/supporting_images/validator/python/ci_linter_recommends_serializers.png)
+
+- **results for "recommends/test_model.py"**
+
+  !["recommends/test_model.py"](documentation/supporting_images/validator/python/ci_linter_recommends_test_model.png)
+
+- **results for "recommends/views.py"**
+
+  !["recommends/views.py"](documentation/supporting_images/validator/python/ci_linter_recommends_view.png)
+
+</details>
+<br>
+
+[Google Lighthouse](https://developer.chrome.com/docs/lighthouse/overview)
+
+<details><summary>Lighthouse Validation results</summary>
+
+- The reason for a lower score in performance for both desktop and mobile is due to the fact that post images are uploaded by the users. Without any post submission processing to compress and convert the image into a more suitable size and extension, it causes the performance score to drop.
+
+- **results for "desktop"**
+
+  !["desktop"](documentation/supporting_images/validator/lighthouse_desktop.png)
+
+- **results for "mobile"**
+
+  !["mobile"](documentation/supporting_images/validator/lighthouse_mobile.png)
+
+</details>
+<br>
+
+[ESLint](https://eslint.org/)
+
+<details><summary>ESLint Validation results</summary>
+
+- **results for "eslint"**
+
+  !["eslint"](documentation/supporting_images/validator/eslint.png)
+
+- When ESLint is run and returns no results, it means that there are no errors detected.
+
+</details>
+<br>
+
+### Automated Testing
+
+<details><summary>DRF API tests results</summary>
+
+- The DRF API was tested with [Django testing tools](https://docs.djangoproject.com/en/4.2/topics/testing/tools/).
+- The coverage tool has been used to check coverage of the test.
+
+- **results for "drf api tests results"**
+
+  !["drf api tests results"](documentation/supporting_images/validator/drf_test/drf-api-coverage-test.png)
+
+- **results for "drf api coverage results"**
+
+  !["drf api coverage results"](documentation/supporting_images/validator/drf_test/drf-api-coverage-report.png)
+
+</details>
+<br>
+
+DB tests were run in the development environment against a local SQLite3 database.
+
+### Browser Compatibility
+
+- The website has been tested on the following browsers:
+  - Google Chrome Version 121.0.6167.85 (Official Build) (64-bit)
+  - Mozilla Firefox Version 121.0 (64-bit)
+  - Microsoft Edge Version 121.0.2277.83 (Official build) (64-bit)
+  <!-- reminder -->
+  - Apple Safari on macOS Ventura Version 16.5 (18615.2.9.11.4)
+  - Apple Safari on iOS 16.6.1 (20G81)
+  - DuckDuckGo Mobile Version 7.93.0.2
+  <!-- reminder -->
+
+### Test Cases and Results
+
+- The table below details the testing case that was used and the result of the test.
+
+<!-- reminder -->
+
+### Known Bugs
+
+- Recommendation count in the Top 5 recommended post does not automatically refresh.
+  - Attempt to add the recommendation count to the dependency array of the useEffect, but nothing happens.
+
+### Unfixed Bugs
+
+- Recommendation count in the Top 5 recommended post does not automatically refresh.
+
+### How to clone this repository
+
+<details><summary>For DRF API</summary>
+
+- Visit the main repository at https://github.com/yamesjamess/p5-feast-your-eyes-drf-api
+
+- Click the "Code" button to the right of the screen, click HTTPs and copy the link present there.
+
+- Open a GitBash terminal and navigate to the directory where you want to clone.
+
+- In the terminal, type "git clone" then paste in the copied URL and press the Enter key to begin the cloning process.
+
+- To install the packages required by the application use the command : pip install -r requirements.txt
+</details>
+
+<details><summary>For Front End</summary>
+
+- Visit the main repository at https://github.com/yamesjamess/p5-feast-your-eyes
+
+- Click the "Code" button to the right of the screen, click HTTPs and copy the link present there.
+
+- Open a GitBash terminal and navigate to the directory where you want to clone.
+
+- In the terminal, type "git clone" then paste in the copied URL and press the Enter key to begin the cloning process.
+
+- To install the packages required by the application use the command : nvm install 16
+</details>
+
+### Deployment
+
+- DRF API
+
+  - Detailed and step by step instruction can be found on documentation provided by Code Institute on this document: [CI DRF Cheat Sheet - Deployment](https://docs.google.com/document/d/1v8mOyB5l7aSL5loy3MVIX4z4SsLYKe-ZEGGpT_Z5DRM/edit#heading=h.7xtx0jslcwbv)
+
+- Front End
+  - How to deploy the program on Heroku
+    - Log in to Heroku at https://heroku.com - create an account if needed.
+    - From the Heroku dashboard, click the Create new app button. For a new account an icon will be visible on screen to allow you to Create an app, otherwise a link to this function is located under the New dropdown menu at the top right of the screen.
+    - On the Create New App page, enter a unique name for the application and select region. Then click Create app.
+    - Create a Procfile in your project and add "web: serve -s build" into the file.
+    - Add, Commit, and push any local changes to GitHub.
+    - Go to the Deploy tab on Heroku.
+    - Connect to your GitHub.
+    - Search the repo, for this project the repo is called "p5-feast-your-eyes".
+    - Choose the main branch to deploy.
+    - Click the deploy button.
+    - Check the logs for any errors.
+
+#### The live link to the application can be found here - [Feast Your Eyes](https://p5-feast-your-eyes-d27a109d8aa0.herokuapp.com/)
