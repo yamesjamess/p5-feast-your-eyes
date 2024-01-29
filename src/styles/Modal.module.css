@@ -1,0 +1,23 @@
+.OrderedList {
+  font-weight: bold;
+}
+
+.UnorderedList {
+  font-weight: normal;
+}
+
+.Rules {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.RulesContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.UnderlineBold {
+  text-decoration: underline;
+  font-weight: bold;
+}

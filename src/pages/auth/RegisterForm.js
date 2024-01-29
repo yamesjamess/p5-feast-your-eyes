@@ -4,6 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import styles from "../../styles/RegisterSignInForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
+import modalStyles from "../../styles/Modal.module.css";
 
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -131,9 +132,9 @@ const RegisterForm = () => {
               </Alert>
             ))}
 
-            <div className={styles.RulesContainer}>
+            <div className={modalStyles.RulesContainer}>
               click to read the&nbsp;
-              <span onClick={handleShow} className={styles.Rules}>
+              <span onClick={handleShow} className={modalStyles.Rules}>
                 rules
               </span>
             </div>
@@ -165,10 +166,10 @@ const RegisterForm = () => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className={appStyles.Content}>
-          <ol className={styles.OrderedList}>
+          <ol className={modalStyles.OrderedList}>
             <li>
               Content Guidelines:
-              <ul className={styles.UnorderedList}>
+              <ul className={modalStyles.UnorderedList}>
                 <li>
                   Users are allowed to upload and share images of food-related
                   content only.
@@ -182,7 +183,7 @@ const RegisterForm = () => {
             </li>
             <li>
               Respectful Conduct:
-              <ul className={styles.UnorderedList}>
+              <ul className={modalStyles.UnorderedList}>
                 <li>
                   Users are expected to engage in respectful and constructive
                   conversations. Any form of harassment, hate speech, or
@@ -193,7 +194,7 @@ const RegisterForm = () => {
             </li>
             <li>
               Ownership and Attribution:
-              <ul className={styles.UnorderedList}>
+              <ul className={modalStyles.UnorderedList}>
                 <li>
                   Users should only upload images that they own or have the
                   right to share. Proper attribution should be given if the
@@ -203,7 +204,7 @@ const RegisterForm = () => {
             </li>
             <li>
               Community Standards:
-              <ul className={styles.UnorderedList}>
+              <ul className={modalStyles.UnorderedList}>
                 <li>
                   Users are encouraged to contribute positively to the community
                   by providing helpful comments, tips, and feedback on shared
@@ -217,7 +218,7 @@ const RegisterForm = () => {
             </li>
             <li>
               Moderation and Reporting:
-              <ul className={styles.UnorderedList}>
+              <ul className={modalStyles.UnorderedList}>
                 <li>
                   The platform reserves the right to moderate content and may
                   remove any content that violates the terms of usage.
@@ -226,7 +227,7 @@ const RegisterForm = () => {
             </li>
             <li>
               Account Responsibility:
-              <ul className={styles.UnorderedList}>
+              <ul className={modalStyles.UnorderedList}>
                 <li>
                   Users are responsible for maintaining the security of their
                   accounts. Sharing login credentials or engaging in any
@@ -237,7 +238,7 @@ const RegisterForm = () => {
             </li>
             <li>
               Updates and Changes:
-              <ul className={styles.UnorderedList}>
+              <ul className={modalStyles.UnorderedList}>
                 <li>
                   The terms of usage may be updated or modified to reflect
                   changes in the platform's policies. Users will be notified of
