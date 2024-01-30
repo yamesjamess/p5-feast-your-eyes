@@ -1054,7 +1054,7 @@ DB tests were run in the development environment against a local SQLite3 databas
 ### Code
 
 - Majority of the code comes from the Code Institute's Advanced Front End Course - Moments walkthrough
-- The rest of the code has been adapted and created by the developer.
+- The rest of the code has been adapted from Moments walkthrough and created by the developer.
 - Django test: [TransactionManagementError](https://stackoverflow.com/questions/43978468/django-test-transactionmanagementerror-you-cant-execute-queries-until-the-end)
 
 - ESLint configuration
