@@ -59,72 +59,131 @@ To unlock additional features such as liking/unliking posts and submitting revie
   - As a superuser I can manage the Followers so that I can create, update, delete and view the followers I wish to display.
 
 - **USER STORY (#9)** : Create Landing Page & Navigation
+
   - As a website user I can visit the website and see the landing page and navigation so that I can navigate the website to use it's functionality.
+
 - **USER STORY (#10)** : Routing NavBar
+
   - As a website user I can navigate each page seamlessly so that I do not need to wait for page refresh.
+
 - **USER STORY (#11)** : User Registration
+
   - As a website user I can register for an account so that I can access all the functions of the site.
+
 - **USER STORY (#12)** : User Login
+
   - As a website user I can login to my account so that I can use the website's full function.
+
 - **USER STORY (#13)** : User Logout
+
   - As a website user I can logout of my account so that protect my account from other user from using my account.
-- **USER STORY (#14)** : Refresh Access Toekns
+
+- **USER STORY (#14)** : Refresh Access Tokens
+
   - As a website user I can maintain my logged-in status until I logout or for 24 hours after the last activity so that I can use the website without interruption.
+
 - **USER STORY (#15)** : Profile Page - View
+
   - As a logged in User I can view my profile so that I can see the details I have entered about myself.
+
 - **USER STORY (#16)** : Profile Page - Edit
+
   - As a logged in User I can edit my profile so that I can change my personal info.
+
 - **USER STORY (#17)** : Update Password
+
   - As a logged in User I can update my password so that I can change my password if I need to.
+
 - **USER STORY (#18)** : Update Username
+
   - As a logged in User I can change my username so that I can change my username if I want to.
+
 - **USER STORY (#19)** : View Posts
+
   - As a User I can click on the Homes button in the NavBar so that I can see all the posts in the system.
+
 - **USER STORY (#20)** : Search Posts
+
   - As a User I can enter a query in the search bar so that I can find a post easily.
+
 - **USER STORY (#21)** : Filtered Posts
+
   - As a logged in User I can filter the post cards so that I can display them in the order I want.
+
 - **USER STORY (#22)** : Add Post
+
   - As a logged in User I can click on the Add Post button in the NavBar so that I can add the post details to a form and save to the database.
+
 - **USER STORY (#23)** : Edit Post
+
   - As a logged in User I can click on the Edit Post button in the corner of the post card so that I can edit the post details to a form and save to the database.
+
 - **USER STORY (#24)** : Delete Post
+
   - As a logged in User I can click on the Delete Post button in the corner of the post card so that I can delete the post from the database.
+
 - **USER STORY (#25)** : Add Comment
+
   - As a logged in User I can add a comment so that I can leave any comments about a particular post.
+
 - **USER STORY (#26)** : Edit Comment
+
   - As a logged in User, and creator of a comment, I can click on the pencil item of a comment I have written so that I can update it if I want to.
+
 - **USER STORY (#27)** : Delete Comment
+
   - As a logged in User, and creator of a comment, I can click on the bin icon of a comment I have written so that I can delete it if I want to.
+
 - **USER STORY (#28)** : View Comment
+
   - As a User I can click on the post card so that I can see all the comments in the particular post.
+
 - **USER STORY (#29)** : Add Like
+
   - As a logged in User I can click the like button so that I can leave a like on a particular post.
+
 - **USER STORY (#30)** : Delete Like
+
   - As a logged in User I can click the like button so that I can delete a like on a particular post that I already liked previously.
+
 - **USER STORY (#31)** : Add Recommend
+
   - As a logged in User I can click the star button so that I can leave a recommendation on a particular post.
+
 - **USER STORY (#32)** : Delete Recommend
+
   - As a logged in User I can click the star button so that I can delete a recommendation on a particular post that I already recommended previously.
+
 - **USER STORY (#33)** : Following and Unfollowing a Profile
+
   - As a logged in user I can follow and unfollow other user so that I can see and remove posts by specific users from my feed.
+
 - **USER STORY (#34)** : Top Recommendations
+
   - As a user I can see which post has the highest amount of recommendations so that I can see which post is most popular and check it out.
+
 - **USER STORY (#35)** : Tags
+
   - As a user I can tag my posts and see other post's tag so that make a quick judgement of the post.
   - As a user I can filter by tag so that see all the relevant posts.
+
 - **USER STORY (#36)** : Testing
+
   - As a developer I can test my code with unit test or manual testing so that check if my codes are working.
+
 - **USER STORY (#37)** : Deployment
+
   - As a developer I can deploy the project to Heroku so that the user can access the website.
+
 - **USER STORY (#38)** : Documentation
+
   - As a developer I can write a comprehensive documentation so that other developer can read the README.md and understand my project.
 
 ## Features
 
 ### Existing Back End Features
 
-**BE Feature (#1)** : Django Rest Framwork
+**BE Feature (#1)** : Django Rest Framework
 
 - Since the front end website is being built using React, there is no need for the backend server to return HTML documents.
 - Django Rest Framework is a powerful tool to create, read, update, delete data in JSON form.
@@ -230,16 +289,19 @@ To unlock additional features such as liking/unliking posts and submitting revie
 
 ![Rules modal](documentation/supporting_images/fye_rules_modal.png)
 
-**FE Feature (#6)** : User Sign in
+**FE Feature (#6)** : User Sign in/ Log Out
 
 - To fully utilise the website's function the user need to be signed in.
 - The user can enter their credentials and sign in to the system.
 - Error messages are display if the form is invalid.
 - The user will be redirected to the Home page after successfully signing in.
+- The user can click the logout button to log out
 
 ![Sign in](documentation/supporting_images/fye_sign_in.png)
 
 ![Sign in error](documentation/supporting_images/fye_sign_in_error.png)
+
+![Log out](documentation/supporting_images/fye_log_out.png)
 
 **FE Feature (#7)** : Add Post
 
@@ -460,12 +522,11 @@ To unlock additional features such as liking/unliking posts and submitting revie
 
 ### How these features support the user stories
 
-<!-- reminder -->
-
 - The user stories are numbered from 1 to 38. The features are also numbered from 1 to 28. Below is the cross-reference between the user stories and features, to illustrate that the features satisfies the user stories.
-<!-- reminder -->
 
-![User Story and Feature Cross Reference](#) <!-- reminder -->
+- Please note that the user stories #36 - #38 is not in the cross reference sheet due to it not being relevant to the features.
+
+  ![User Story and Feature Cross Reference](documentation/supporting_images/features_userstories_cross_ref.png)
 
 ### Feature that could be implemented in the future
 
@@ -899,6 +960,12 @@ The EPICs, User Stories, and Kanban Board can be viewd here : [Feast Your Eyes A
 
 DB tests were run in the development environment against a local SQLite3 database.
 
+### Manual Test Cases and Results
+
+- The table below details the testing case that was used and the result of the test.
+
+- <a href="https://github.com/yamesjamess/p5-feast-your-eyes/blob/main/documentation/fye-test-cases.pdf" target="_blank">Manual Testing - Test Cases and Results</a>
+
 ### Browser Compatibility
 
 - The website has been tested on the following browsers:
@@ -908,12 +975,6 @@ DB tests were run in the development environment against a local SQLite3 databas
   - Apple Safari on macOS Ventura Version 16.5 (18615.2.9.11.4)
   - Apple Safari on iOS 16.6.1 (20G81)
 
-### Test Cases and Results
-
-- The table below details the testing case that was used and the result of the test.
-
-<!-- reminder -->
-
 ### Known Bugs
 
 - Recommendation count in the Top 5 recommended post does not automatically refresh.
@@ -921,6 +982,7 @@ DB tests were run in the development environment against a local SQLite3 databas
   - Attempt to add the recommendation count to the dependency array of the useEffect, but nothing happens.
 
 - The user cannot log in to the website on Safari.
+
   - This is a known issue noted by CI
 
 - Tags list only displays the tags of the first 10 posts.
@@ -929,10 +991,11 @@ DB tests were run in the development environment against a local SQLite3 databas
 ### Unfixed Bugs
 
 - Recommendation count in the Top 5 recommended post does not automatically refresh.
-  -  Attempted to fix but is  left Unfix due to time restraint.
+
+  - Attempted to fix but is left Unfix due to time restraint.
 
 - Tags list only displays the tags of the first 10 posts.
-  -  Attempted to fix but is  left Unfix due to time restraint.
+  - Attempted to fix but is left Unfix due to time restraint.
 
 ### How to clone this repository
 
