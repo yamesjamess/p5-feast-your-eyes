@@ -459,7 +459,9 @@ To unlock additional features such as liking/unliking posts and submitting revie
 ![Profile Password Change alert](documentation/supporting_images/profile/profile_password_alert.png)
 
 ### How these features support the user stories
+
 <!-- reminder -->
+
 - The user stories are numbered from 1 to 38. The features are also numbered from 1 to 28. Below is the cross-reference between the user stories and features, to illustrate that the features satisfies the user stories.
 <!-- reminder -->
 
@@ -551,6 +553,8 @@ To unlock additional features such as liking/unliking posts and submitting revie
 - The Github Project and Issues was utilise to facilitate the Agile Development Methodology. User Stories were created from User Stories template with acceptance criteria. The development process was aided by Kanban board feature of the Project to visualise what needs to be worked on and what is completed. All the User Stories are linked to EPICs to show how to support each other and what must be achieved to complete development goals.
 
 The EPICs, User Stories, and Kanban Board can be viewd here : [Feast Your Eyes Agile Development Tool](https://github.com/users/yamesjamess/projects/8)
+
+## Technologies Used
 
 ### Languages Used
 
@@ -901,11 +905,8 @@ DB tests were run in the development environment against a local SQLite3 databas
   - Google Chrome Version 121.0.6167.85 (Official Build) (64-bit)
   - Mozilla Firefox Version 121.0 (64-bit)
   - Microsoft Edge Version 121.0.2277.83 (Official build) (64-bit)
-  <!-- reminder -->
   - Apple Safari on macOS Ventura Version 16.5 (18615.2.9.11.4)
   - Apple Safari on iOS 16.6.1 (20G81)
-  - DuckDuckGo Mobile Version 7.93.0.2
-  <!-- reminder -->
 
 ### Test Cases and Results
 
@@ -916,11 +917,22 @@ DB tests were run in the development environment against a local SQLite3 databas
 ### Known Bugs
 
 - Recommendation count in the Top 5 recommended post does not automatically refresh.
+
   - Attempt to add the recommendation count to the dependency array of the useEffect, but nothing happens.
+
+- The user cannot log in to the website on Safari.
+  - This is a known issue noted by CI
+
+- Tags list only displays the tags of the first 10 posts.
+  - This is due to pagination.
 
 ### Unfixed Bugs
 
 - Recommendation count in the Top 5 recommended post does not automatically refresh.
+  -  Attempted to fix but is  left Unfix due to time restraint.
+
+- Tags list only displays the tags of the first 10 posts.
+  -  Attempted to fix but is  left Unfix due to time restraint.
 
 ### How to clone this repository
 
@@ -935,6 +947,8 @@ DB tests were run in the development environment against a local SQLite3 databas
 - In the terminal, type "git clone" then paste in the copied URL and press the Enter key to begin the cloning process.
 
 - To install the packages required by the application use the command : pip install -r requirements.txt
+
+- Detailed and step by step instruction can be found on documentation provided by Code Institute on this document: [CI DRF Cheatsheet - Setting up basic Django Project with Cloudinary](https://docs.google.com/document/d/1LCLxWhmW_4VTE4GXsnHgmPUwSPKNT4KyMxSH8agbVqU/edit#heading=h.mpopj7v69qqn)
 </details>
 
 <details><summary>For Front End</summary>
@@ -950,7 +964,7 @@ DB tests were run in the development environment against a local SQLite3 databas
 - To install the packages required by the application use the command : nvm install 16
 </details>
 
-### Deployment
+## Deployment
 
 - DRF API
 
@@ -971,3 +985,80 @@ DB tests were run in the development environment against a local SQLite3 databas
     - Check the logs for any errors.
 
 #### The live link to the application can be found here - [Feast Your Eyes](https://p5-feast-your-eyes-d27a109d8aa0.herokuapp.com/)
+
+## Credits
+
+### Code
+
+- Majority of the code comes from the Code Institute's Advanced Front End Course - Moments walkthrough
+- The rest of the code has been adapted and created by the developer.
+- Django test: [TransactionManagementError](https://stackoverflow.com/questions/43978468/django-test-transactionmanagementerror-you-cant-execute-queries-until-the-end)
+
+- ESLint configuration
+  - https://stackoverflow.com/questions/72780296/warning-react-version-not-specified-in-eslint-plugin-react-settings-while-run
+  - https://stackoverflow.com/questions/49789177/module-is-not-defined-and-process-is-not-defined-in-eslint-in-visual-studio-code
+  - https://stackoverflow.com/questions/42541559/eslint-with-react-gives-no-unused-vars-errors
+  - https://stackoverflow.com/questions/56398742/eslint-throws-no-undef-errors-when-linting-jest-test-files
+  - https://stackoverflow.com/questions/62031536/referenceerror-test-is-not-defined-with-jest
+  - https://stackoverflow.com/questions/52992932/component-definition-is-missing-display-name-react-display-name
+  - https://github.com/AtomLinter/linter-eslint/issues/462
+
+### Content
+
+- Information on the website is created by the developer.
+
+  - Inpsiration from [Samsung Food](https://samsungfood.com/)
+  - The story, all names, characters, and incidents portrayed in this project are fictitious.
+  - This is for educational purpose only.
+
+### Media
+
+- Quicksand font was used and imported from [Google Fonts](https://fonts.google.com/)
+- The logo is from [Mario Bieh - Noun](https://thenounproject.com/icon/fried-egg-171208/)
+- Favicon is created from the logo and converted to favicon by [favicon.io](https://favicon.io/)
+- Error 404 image is from [Free Vector](https://www.freepik.com/free-vector/flat-404-error-template_1588538.htm#query=404%20page%20found&position=0&from_view=search&track=ais&uuid=1bccb536-4a56-4d7c-b045-fe54fb3cf756)
+- "Adele" profile image by [Andrea Piacquadio - Pexel](https://www.pexels.com/photo/closeup-photo-of-woman-with-brown-coat-and-gray-top-733872/)
+- "Britney" profile image by [Daniel Xavier - Pexel](https://www.pexels.com/photo/woman-wearing-black-eyeglasses-1239291/)
+- "Henry" profile image by [Stefan Stefancik - Pexel](https://www.pexels.com/photo/man-on-gray-shirt-portrait-91227/)
+- "Tom" profile image by [RDNE Stock project - Pexel](https://www.pexels.com/photo/a-man-in-brown-pants-sitting-on-the-street-while-wearing-rollerblades-7335160/)
+- Register page image by [Alexy Almond - Pexel](https://www.pexels.com/photo/person-taking-photos-of-food-3757990/)
+- Log in page image by [Mizuno K - Pexel](https://www.pexels.com/photo/men-preparing-breakfast-13335440/)
+- No Result icon by [Meko - Noun](https://thenounproject.com/icon/no-result-5191447/)
+- Upload icon by [Naveen - Noun](https://thenounproject.com/icon/upload-1489457/)
+
+- Content images
+  - Some of these images may or may not have been used in the website but will listed anyways.
+  - ribs - [Faisal - Unsplash](https://unsplash.com/photos/cooked-ribs-BS4Zeq7xDRk)
+  - burgers - [Jenn Kosar - Unsplash](https://unsplash.com/photos/fried-fries-and-burger-on-plate-jrWoDRmhwRY)
+  - nachos - [Spencer Davis - Unsplash](https://unsplash.com/photos/nachos-on-plate-znc9hSxXBJw)
+  - poke bowl - [Jonathan Borba - Unsplash](https://unsplash.com/photos/flat-lay-photography-bowl-of-vegetable-Gkc_xM3VY34)
+  - beef stick - [Markus Winkler - Unsplash](https://unsplash.com/photos/beef-on-sticks-display-PcBmNPteF_0)
+  - pasta - [Liubov Ilchuk - Unsplash](https://unsplash.com/photos/four-filled-wine-glasses-and-foods-on-table-_qZOwG2oaj4)
+  - dim sum - [The Free Birds - Unsplash](https://unsplash.com/photos/white-rice-on-brown-wooden-bowl-6bF6kS4WJk0)
+  - french toast - [Crystal Jo - Unsplash](https://unsplash.com/photos/brown-bread-on-white-ceramic-plate-Q58N5cBKDZ8)
+  - Irish breakfast - [Melissa Walker Horn - Unsplash](https://unsplash.com/photos/food-photography-of-grilled-foods-with-beans-WbA_PCv3_Co)
+  - Japanese food - [Paulo Doi - Unsplash](https://unsplash.com/photos/pasta-dish-in-stainless-steel-bowl-6uTQmtqcAzs)
+  - sushi - [Fadya Azhary - Unsplash](https://unsplash.com/photos/sushi-on-wooden-platter-5KS7T3Gs3CA)
+  - cheese - [Azzedine Rouichi - Unsplash](https://unsplash.com/photos/a-bunch-of-cheese-stacked-on-top-of-each-other-YW_5rJvAdKw)
+  - meal prep - [S'well - Unsplash](https://unsplash.com/photos/four-clear-plastic-bowls-with-vegetables-CJdZ800-Fbs)
+  - cocktail - [Emily Andreeva - Unsplash](https://unsplash.com/photos/person-holding-clear-wine-glass-with-white-liquid-hXg4gGjIfhw)
+  - steak - [Hanxiao - Unsplash](https://unsplash.com/photos/cooked-food-on-black-ceramic-plate-beside-wine-glass-on-table-aBnl2R-wpaM)
+  - grilled fish - [Faisal - Unsplash](https://unsplash.com/photos/grilled-meat-with-sliced-cucumber-and-sliced-cucumber-on-white-ceramic-plate-cYCUqX97w4c)
+  - fried seafood - [Antonio Mendes - Unsplash](https://unsplash.com/photos/assorted-fried-foods-i5hzQrNBbR0)
+  - pizza - [Unleashed Agency - Unsplash](https://unsplash.com/photos/pizza-on-brown-wooden-box-EZpGDYWBAYA)
+  - pie - [Elena Sambros - Unsplash](https://unsplash.com/photos/red-and-white-bread-on-white-ceramic-plate-iWwqLcX353E)
+  - hotpot - [Xiong Gordon - Unsplash](https://unsplash.com/photos/vegetable-dish-on-brown-ceramic-bowl-kpC36hIsODQ)
+  - bakery - [Siebe Warmoeskerken - Unsplash](https://unsplash.com/photos/pantry-display-counter-R3iAcQxylmE)
+  - wrap - [Andrew Valdivia - Unsplash](https://unsplash.com/photos/a-person-holding-a-sandwich-in-a-brown-box-nKKzs2oqsMk)
+  - sandwich - [Sincerely Media - Unsplash](https://unsplash.com/photos/taco-on-brown-tray-WlHG7QIjabo)
+  - taco - [Spencer Davis - Unsplash](https://unsplash.com/photos/three-fresh-tacos-on-gray-tray-hs2076lrvKQ)
+  - enchilada - [Daniel Lloyd Blunk-Fernández - Unsplash](https://unsplash.com/photos/green-vegetable-on-white-ceramic-plate-14FSe2g8mhE)
+  - chick fil a - [Brad - Unsplash](https://unsplash.com/photos/a-chicken-sandwich-sitting-on-top-of-a-piece-of-paper-PcXZtTcRNvY)
+  - Italian soup - [Cloris Ying - Unsplash](https://unsplash.com/photos/round-white-ceramic-bowl-with-seafoods-rmdo8r9iGfw)
+  - afternoon tea - [Sebastian Coman Photography - Unsplash](https://unsplash.com/photos/clear-long-stem-wine-glass-Ekqld5tI3JA)
+  - fish and chips - [Meelan Bawjee - Unsplash](https://unsplash.com/photos/cooked-meat-and-french-fries-in-white-disposable-plate-A_tPBct4tz8)
+
+### Achknowledgements
+
+- Thank you to my mentor, Mo Shami, for the help with this project.
+- Special thanks to all the tutors at Code Institute for all your help!
